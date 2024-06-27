@@ -1,0 +1,349 @@
+! $UXTermId: UXTerm.ad,v 1.102 2016/12/22 02:07:39 tom Exp $
+! -----------------------------------------------------------------------------
+! this file is part of uxterm
+!
+! Copyright 1996-2011,2016 by Thomas E. Dickey
+! 
+!                         All Rights Reserved
+! 
+! Permission is hereby granted, free of charge, to any person obtaining a
+! copy of this software and associated documentation files (the
+! "Software"), to deal in the Software without restriction, including
+! without limitation the rights to use, copy, modify, merge, publish,
+! distribute, sublicense, and/or sell copies of the Software, and to
+! permit persons to whom the Software is furnished to do so, subject to
+! the following conditions:
+! 
+! The above copyright notice and this permission notice shall be included
+! in all copies or substantial portions of the Software.
+! 
+! THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+! OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+! MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+! IN NO EVENT SHALL THE ABOVE LISTED COPYRIGHT HOLDER(S) BE LIABLE FOR ANY
+! CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+! TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+! SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+! 
+! Except as contained in this notice, the name(s) of the above copyright
+! holders shall not be used in advertising or otherwise to promote the
+! sale, use or other dealings in this Software without prior written
+! authorization.
+! -----------------------------------------------------------------------------
+
+!UXTerm font and locale
+UXTerm.locale:		true
+UXTerm.utf8:		true
+UXTerm*utf8Title:	true
+UXTerm.VT100.utf8:	true
+UXTerm.VT100.locale:	true
+UXTerm*locale: 		zh_CN.UTF-8
+UXTerm*fontMenu.Label:  	VT Fonts
+UXTerm*fontMenu*fontdefault*Label:	Default
+UXTerm*fontMenu*font1*Label:  		Unreadable
+UXTerm*VT100.font1:	nil2
+UXTerm*IconFont:		nil2
+UXTerm*fontMenu*font2*Label:	Tiny
+UXTerm*VT100.font2:	5x7
+UXTerm*fontMenu*font3*Label:	Small
+UXTerm*VT100.font3:	6x10
+UXTerm*fontMenu*font4*Label:	Medium
+UXTerm*VT100.font4:		7x13
+UXTerm*fontMenu*font5*Label:	Large
+UXTerm*VT100.font5:	9x15
+UXTerm*fontMenu*font6*Label:	Huge
+UXTerm*VT100.font6:	10x20
+UXTerm*fontMenu*fontescape*Label:	Escape Sequence
+UXTerm*fontMenu*fontsel*Label:		Selection
+! fontescape and fontsel overridden by application
+UXTerm*fontMenu*allow-bold-fonts*Label:	Bold Fonts
+UXTerm*fontMenu*font-linedrawing*Label:	Line-Drawing Characters
+UXTerm*fontMenu*font-doublesize*Label:	Doublesized Characters
+UXTerm*fontMenu*font-loadable*Label:	VT220 Soft Fonts
+UXTerm*fontMenu*font-packed*Label:	Packed Font
+UXTerm*fontMenu*render-font*Label:	TrueType Fonts
+UXTerm*fontMenu*utf8-mode*Label:		UTF-8 Encoding
+UXTerm*fontMenu*utf8-fonts*Label:	UTF-8 Fonts
+UXTerm*fontMenu*utf8-title*Label:	UTF-8 Titles
+UXTerm*fontMenu*allow-color-ops*Label:	Allow Color Ops
+UXTerm*fontMenu*allow-font-ops*Label:	Allow Font Ops
+UXTerm*fontMenu*allow-mouse-ops*Label:	Allow Mouse Ops
+UXTerm*fontMenu*allow-tcap-ops*Label:	Allow Termcap Ops
+UXTerm*fontMenu*allow-title-ops*Label:	Allow Title Ops
+UXTerm*fontMenu*allow-window-ops*Label:	Allow Window Ops
+! UXTerm VT Fonts UTF-8
+UXTerm*VT100.utf8Fonts.font2:	-misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1
+UXTerm*VT100.utf8Fonts.font:	-misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+UXTerm*VT100.utf8Fonts.font3:	-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
+UXTerm*VT100.utf8Fonts.font4:	-misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
+UXTerm*VT100.utf8Fonts.font5:	-misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+UXTerm*VT100.utf8Fonts.font6:	-misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1
+
+! UXTerm Menu Resources
+! UXTerm SimepleMenu Resources
+UXTerm*SimpleMenu*BackingStore:		NotUseful
+UXTerm*SimpleMenu*menuLabel.font:	-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-iso8859-*
+UXTerm*SimpleMenu*menuLabel.vertSpace:	100
+UXTerm*SimpleMenu*HorizontalMargins:	16
+UXTerm*SimpleMenu*Sme.height:		16
+UXTerm*SimpleMenu*Cursor:		left_ptr
+! UXTerm Main Options
+UXTerm*mainMenu.Label:			Main Options
+UXTerm*mainMenu*toolbar*Label:		Toolbar
+UXTerm*mainMenu*fullscreen*Label:	Full Screen
+UXTerm*mainMenu*securekbd*Label:		Secure Keyboard
+UXTerm*mainMenu*allowsends*Label:	Allow SendEvents
+UXTerm*mainMenu*redraw*Label:		Redraw Window
+UXTerm*mainMenu*logging*Label:		Log to File
+UXTerm*mainMenu*print-immediate*Label:	Print-All Immediately
+UXTerm*mainMenu*print-on-error*Label:	Print-All on Error
+UXTerm*mainMenu*print*Label:		Print Window
+UXTerm*mainMenu*print-redir*Label:	Redirect to Printer
+UXTerm*mainMenu*dump-html*Label:		XHTML Screen Dump
+UXTerm*mainMenu*dump-svg*Label:		SVG Screen Dump
+UXTerm*mainMenu*8-bit control*Label:	8-Bit Controls
+UXTerm*mainMenu*backarrow key*Label:	Backarrow Key (BS/DEL)
+UXTerm*mainMenu*num-lock*Label:		Alt/NumLock Modifiers
+UXTerm*mainMenu*alt-esc*Label:		Alt Sends Escape
+UXTerm*mainMenu*meta-esc*Label:		Meta Sends Escape
+UXTerm*mainMenu*delete-is-del*Label:	Delete is DEL
+UXTerm*mainMenu*oldFunctionKeys*Label:	Old Function-Keys
+UXTerm*mainMenu*sunFunctionKeys*Label:	Sun Function-Keys
+UXTerm*mainMenu*sunKeyboard*Label:	VT220 Keyboard
+UXTerm*mainMenu*hpFunctionKeys*Label:	HP Function-Keys
+UXTerm*mainMenu*scoFunctionKeys*Label:	SCO Function-Keys
+UXTerm*mainMenu*tcapFunctionKeys*Label:	Termcap Function-Keys
+UXTerm*mainMenu*suspend*Label:		Send STOP Signal
+UXTerm*mainMenu*continue*Label:		Send CONT Signal
+UXTerm*mainMenu*interrupt*Label:		Send INT Signal
+UXTerm*mainMenu*hangup*Label:		Send HUP Signal
+UXTerm*mainMenu*terminate*Label:		Send TERM Signal
+UXTerm*mainMenu*kill*Label:		Send KILL Signal
+UXTerm*mainMenu*quit*Label:		Quit
+! UXTerm VT Options
+UXTerm*vtMenu.Label:			VT Options
+UXTerm*vtMenu*scrollbar*Label:		Enable Scrollbar
+UXTerm*vtMenu*jumpscroll*Label:		Enable Jump Scroll
+UXTerm*vtMenu*reversevideo*Label:	Enable Reverse Video
+UXTerm*vtMenu*autowrap*Label:		Enable Auto Wraparound
+UXTerm*vtMenu*reversewrap*Label:		Enable Reverse Wraparound
+UXTerm*vtMenu*autolinefeed*Label:	Enable Auto Linefeed
+UXTerm*vtMenu*appcursor*Label:		Enable Application Cursor Keys
+UXTerm*vtMenu*appkeypad*Label:		Enable Application Keypad
+UXTerm*vtMenu*scrollkey*Label:		Scroll to Bottom on Key Press
+UXTerm*vtMenu*scrollttyoutput*Label:	Scroll to Bottom on Tty Output
+UXTerm*vtMenu*allow132*Label:		Allow 80/132 Column Switching
+UXTerm*vtMenu*keepSelection*Label:	Keep Selection
+UXTerm*vtMenu*selectToClipboard*Label:	Select to Clipboard
+UXTerm*vtMenu*cursesemul*Label:		Enable Curses Emulation
+UXTerm*vtMenu*visualbell*Label:		Enable Visual Bell
+UXTerm*vtMenu*bellIsUrgent*Label:	Enable Bell Urgency
+UXTerm*vtMenu*poponbell*Label:		Enable Pop on Bell
+UXTerm*vtMenu*cursorblink*Label:		Enable Blinking Cursor
+UXTerm*vtMenu*titeInhibit*Label:		Enable Alternate Screen Switching
+UXTerm*vtMenu*activeicon*Label:		Enable Active Icon
+UXTerm*vtMenu*softreset*Label:		Do Soft Reset
+UXTerm*vtMenu*hardreset*Label:		Do Full Reset
+UXTerm*vtMenu*clearsavedlines*Label:	Reset and Clear Saved Lines
+UXTerm*vtMenu*tekshow*Label:		Show Tek Window
+UXTerm*vtMenu*tekmode*Label:		Switch to Tek Mode
+UXTerm*vtMenu*vthide*Label:		Hide VT Window
+UXTerm*vtMenu*altscreen*Label:		Show Alternate Screen
+UXTerm*vtMenu*sixelScrolling*Label:	Sixel Scrolling
+UXTerm*vtMenu*privateColorRegisters*Label:Private Color Registers
+! UXTerm Tek Options
+UXTerm*tekMenu.Label:			Tek Options
+UXTerm*tekMenu*tektextlarge*Label:	Large Characters
+UXTerm*tekMenu*tektext2*Label:		#2 Size Characters
+UXTerm*tekMenu*tektext3*Label:		#3 Size Characters
+UXTerm*tekMenu*tektextsmall*Label:	Small Characters
+UXTerm*tekMenu*tekpage*Label:		PAGE
+UXTerm*tekMenu*tekreset*Label:		RESET
+UXTerm*tekMenu*tekcopy*Label:		COPY
+UXTerm*tekMenu*vtshow*Label:		Show VT Window
+UXTerm*tekMenu*vtmode*Label:		Switch to VT Mode
+UXTerm*tekMenu*tekhide*Label:		Hide Tek Window
+
+! Tek4014 Widget Resources
+UXTerm*tek4014*fontLarge:		9x15
+UXTerm*tek4014*font2:			8x13
+UXTerm*tek4014*font3:			6x13
+UXTerm*tek4014*fontSmall:		6x10
+
+! If uxterm is built with a toolbar, the widget hierarchy looks like this,
+! showing widget name / class names.  The complete menu hierarchy is built
+! at startup because it is needed to make the layout work for the menubar:
+!
+!	uxterm/UXTerm
+!		form/Form
+!			menubar/Box
+!				mainMenuButton/MenuButton
+!					mainMenu/SimpleMenu
+!						menuLabel/SmeBSB
+!						toolbar/SmeBSB
+!						...
+!					vtMenu/SimpleMenu
+!						menuLabel/SmeBSB
+!						scrollbar/SmeBSB
+!						...
+!					fontMenu/SimpleMenu
+!						menuLabel/SmeBSB
+!						fontdefault/SmeBSB
+!						...
+!					tekMenu/SimpleMenu
+!						menuLabel/SmeBSB
+!						fontdefault/SmeBSB
+!						...
+!			vt100/VT100
+!			tektronix/TopLevelShell
+!				shellext/VendorShellExt
+!					tek4014/Tek4014
+!
+! If built without a toolbar, the widget hierarchy is simpler, because there
+! is no form, and the popup menu widgets are created only when they are first
+! used.
+!
+!	uxterm/UXTerm
+!		shellext/VendorShellExt
+!			mainMenu/SimpleMenu
+!				menuLabel/SmeBSB
+!				...
+!			...
+!		vt100/VT100
+!		tektronix/TopLevelShell
+!			shellext/VendorShellExt
+!				tek4014/Tek4014
+!
+! A more complete list of the widget/class names can be obtained using editres
+! to dump a file.  Some widget names are not available until the corresponding
+! menu has been created.
+
+! These resources reduce space around the menubar, by eliminating padding in
+! the enclosing form (Thickness) and the border of the Box which represents
+! the menubar widget.
+UXTerm*form.Thickness:			0
+UXTerm*menubar.borderWidth:		0
+
+! If we wanted to eliminate the border of the popup menus, we could do this
+! instead, since they are children of the menubar:
+!UXTerm*menubar*borderWidth:		0
+
+! Eliminate the border of the buttons in the menubar, so the only line around
+! the text is for the highlighted button:
+UXTerm*MenuButton*borderWidth:		0
+
+! Set a border for the menus to make them simpler to distinguish against the
+! vt100 widget:
+UXTerm*SimpleMenu*borderWidth:		2
+
+! uxterm can switch at runtime between bitmap (default) and TrueType fonts.
+! The "faceSize" resource controls the size of the latter.  However, it was
+! originally given with a size that makes the two types of fonts different
+! sizes.  Uncomment this line to use the same size as "fixed".
+!UXTerm*faceSize:			8
+
+! Here is a pattern that is useful for double-clicking on a URL:
+!UXTerm*charClass: 33:48,35:48,37-38:48,43-47:48,58:48,61:48,63-64:48,95:48,126:48
+!
+! Alternatively,
+!UXTerm*on2Clicks: regex [[:alpha:]]+://([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+
+! VT100s and similar terminals recognize escape sequences and control
+! characters to which they reply to the host with other escape sequences,
+! to provide information.  The "resize" program uses this feature.
+!
+! In addition, xterm recognizes several escape sequences which can be used to
+! set fonts, window properties, return settings via escape sequences.  Some
+! find these useful; others are concerned with the possibility of unexpected
+! inputs.
+!
+! All of these features can be enabled or disabled via menus.
+!
+! Depending on your environment, you may wish to disable those by default by
+! uncommenting one or more of the resource settings below:
+!UXTerm*allowFontOps:			false
+!UXTerm*allowTcapOps:			false
+!UXTerm*allowTitleOps:			false
+!UXTerm*allowWindowOps:			false
+
+! UXterm settings
+! copy & paste
+XTerm*selectToClipboard:		true
+XTerm*vt100.translations:		#override \
+	Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+	Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+	
+! Alt
+UXTerm*eightBitInput:			false
+UXTerm*altSendsEscape:			true
+
+!input method
+UXTerm*inputMethod:			fictx
+
+! Fonts
+UXTerm*boldFont:			fixed:size=11
+!English font
+!UXTerm*faceName:			DejaVu Sans Mono:antialias=True:pixelsize=13:italic
+UXTerm*faceName:			DejaVu Sans Mono:antialias=True:pixelsize=13
+!UXTerm*faceName:			JetBrains Mono:antialias=True:pixelsize=13
+!Chinese font
+!UXTerm*faceNameDoublesize:	WenQuanYi Zen Hei Mono:antialias=True:pixelsize=13:italic
+UXTerm*faceNameDoublesize:	WenQuanYi Zen Hei Mono:antialias=True:pixelsize=13
+
+!scrollbar
+!UXTerm*scrollBar: 		false
+!UXTerm*rightScrollBar: 		true
+UXTerm*SaveLines: 		4096
+UXTerm*jumpScroll: 		true
+
+!UXTerm.geometry: 		80x36
+!UXTerm*loginshell: 		true
+!UXTerm*cursorBlink: 		true
+UXTerm*background: 		#282A36
+UXTerm*foreground: 		#F8F8F2
+!UXTerm.borderLess: 		true
+!UXTerm.cursorBlink: 		true
+UXTerm*colorUL: 		#0000ff
+UXTerm*colorBD: 		#00ff00
+UXTerm*cursorColor: 		#00cd00
+UXTerm*borderColor: 		#000000
+UXTerm*scrollColor: 		#000000
+
+UXTerm*visualBell: 		false
+UXTerm*allowSendEvents: 	True
+UXTerm*sessionMgt: 		false
+UXTerm*activeIcon: 		true
+!UXTerm*iconPixmap: 		/usr/share/icons/locolor/16x16/apps/xterm.xbm
+UXTerm*fullscreen: 		never
+
+!UXTerm*faceSize: 		20
+!UXTerm*faceSize1: 		20
+!UXTerm*faceSize2: 		20
+!UXTerm*faceSize3: 		20
+!UXTerm*faceSize4: 		20
+!UXTerm*faceSize5: 		20
+!UXTerm*faceSize6: 		20
+UXTerm.cjkWidth:		true
+UXTerm*xftAntialias:		true
+
+! Debian package customizations follow.
+UXTerm*ptyInitialErase: 	true
+
+! Dracula Xresources palette
+! UXTerm Color
+UXTerm*color0:			#000000
+UXTerm*color8:			#4D4D4D
+UXTerm*color1:			#FF5555
+UXTerm*color9:			#FF6E67
+UXTerm*color2:			#50FA7B
+UXTerm*color10:			#5AF78E
+UXTerm*color3:			#F1FA8C
+UXTerm*color11:			#F4F99D
+UXTerm*color4:			#BD93F9
+UXTerm*color12:			#CAA9FA
+UXTerm*color5:			#FF79C6
+UXTerm*color13:			#FF92D0
+UXTerm*color6:			#8BE9FD
+UXTerm*color14:			#9AEDFE
+UXTerm*color7:			#BFBFBF
+UXTerm*color15:			#E6E6E6

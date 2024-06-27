@@ -1,0 +1,35 @@
+[begin] (菜单)
+   [exec] (终端) {x-terminal-emulator}
+   [exec] (浏览器) {chromium}
+   [exec] (文件管理) {pcmanfm}
+   [exec] (文本编辑) {leafpad}
+   [exec] (网络管理) { wicd-manager }
+   [exec] (Run) { fbrun }
+   [separator]
+   [workspaces] (工作区                 ...)
+   [submenu] (系统样式              ...) {}
+      [stylesdir] (/usr/share/fluxbox/styles)
+      [stylesdir] (~/.fluxbox/styles)
+   [end]
+   [submenu] (系统管理              ...) {}
+         [submenu] (系统管理) {}
+            [exec] (Debian Task selector) { x-terminal-emulator -T "Debian Task$
+            [exec] (Editres) {editres} <>
+            [exec] (Xfontsel) {xfontsel} <>
+            [exec] (Xkill) {xkill} <>
+            [exec] (Xrefresh) {xrefresh} <>
+         [end]
+         [submenu] (系统监控) {}
+            [exec] (Pstree) { x-terminal-emulator -T "Pstree" -e /usr/bin/pstre$
+            [exec] (Top) { x-terminal-emulator -T "Top" -e /usr/bin/top} <>
+            [exec] (Xev) {x-terminal-emulator -e xev} <>
+         [end]
+         [submenu] (硬件管理) {}
+            [exec] (Xvidtune) {xvidtune} <>
+         [end]
+      [end]
+   [separator]
+   [reconfig] (重新装配)
+   [restart] (重启桌面)
+   [exit] (退出系统)
+[end]

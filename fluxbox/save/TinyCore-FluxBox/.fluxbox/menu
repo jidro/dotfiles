@@ -1,0 +1,36 @@
+[begin](Tiny Core)
+[encoding]{UTF-8}
+[include](/usr/local/tce.fluxbox)
+[include](~/.fluxbox/ondemand)
+[submenu](System Tools)
+[exec](Apps){apps}
+[exec](ControlPanel){cpanel}
+[exec](Editor){editor}
+[exec](Exit){exittc}
+[exec](RunProgram){flrun}
+[exec](MountTool){mnttool}
+[exec](ScreenShot){screenshot.sh}
+[exec](Services){services}
+[exec](SetTime){sudo /usr/bin/getTime.sh}
+[exec](tc-wbarconf){tc-wbarconf}
+[exec](Top){cliorx top}
+[exec](Xkill){xkill}
+[end]
+[submenu] (Fluxbox menu)
+[config] (Configure)
+[submenu] (System Styles) {Choose a style...}
+[stylesdir] (/usr/local/share/fluxbox/styles)
+[end]
+[submenu] (User Styles) {Choose a style...}
+[stylesdir] (~/.fluxbox/styles)
+[end]
+[workspaces] (Workspace List)
+[commanddialog] (Fluxbox Command)
+[reconfig] (Reload config)
+[restart] (Restart)
+[exec] (About) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center}
+[end]
+[separator]
+[exec] (Exit) {exittc}
+[endencoding]
+[end]

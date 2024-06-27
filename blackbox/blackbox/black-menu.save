@@ -1,0 +1,46 @@
+# Automatically generated file. Do not edit (see /usr/share/doc/menu/README)
+
+[begin] (Debian)
+   [submenu] (窗口管理器) 
+      [restart] (Blackbox)  {/usr/bin/blackbox} 
+      [restart] (FluxBox)  {/usr/bin/startfluxbox} 
+   [end]
+   [submenu] (应用程序) 
+      [submenu] (系统) 
+         [submenu] (管理) 
+            [exec] (Debian Task selector)  {x-terminal-emulator  -T "Debian Task selector" -e sh -c "su-to-root -c tasksel"} 
+            [exec] (Editres)  {editres} 
+            [exec] (Logout \(obsession\))  {/usr/bin/obsession-logout} 
+            [exec] (Xfontsel)  {xfontsel} 
+            [exec] (Xkill)  {xkill} 
+            [exec] (Xrefresh)  {xrefresh} 
+         [end]
+         [submenu] (系统监控) 
+            [exec] (Pstree)  {x-terminal-emulator  -T "Pstree" -e sh -c "/usr/bin/pstree.x11"} 
+            [exec] (Top)  {x-terminal-emulator  -T "Top" -e sh -c "/usr/bin/top"} 
+            [exec] (Xev)  {x-terminal-emulator -e xev} 
+         [end]
+         [submenu] (硬件) 
+            [exec] (Xvidtune)  {xvidtune} 
+         [end]
+      [end]
+      [submenu] (Shell) 
+         [exec] (Bash)  {x-terminal-emulator  -T "Bash" -e sh -c "/bin/bash --login"} 
+         [exec] (Dash)  {x-terminal-emulator  -T "Dash" -e sh -c "/bin/dash -i"} 
+         [exec] (Sh)  {x-terminal-emulator  -T "Sh" -e sh -c "/bin/sh --login"} 
+      [end]
+   [end]
+   [submenu] (Blackbox) 
+      [config] (Configuration) 
+      [submenu] (Styles) 
+         [stylesdir] (~/.blackbox/styles) 
+         [sep]
+         [stylesdir] (/usr/share/blackbox/styles) 
+      [end]
+      [workspaces] (Workspaces) 
+      [sep]
+      [reconfig] (Reconfigure) 
+      [restart] (Restart) 
+      [exit] (Exit) 
+   [end]
+[end]

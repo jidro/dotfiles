@@ -1,0 +1,82 @@
+# Automatically generated file. Do not edit (see /usr/share/doc/menu/README)
+
+[begin] (Debian)
+   [submenu] (Applications) 
+      [submenu] (Accessibility) 
+         [exec] (Xmag)  {xmag} 
+      [end]
+      [submenu] (Editors) 
+         [exec] (Xedit)  {xedit} 
+      [end]
+      [submenu] (Graphics) 
+         [exec] (X Window Snapshot)  {xwd | xwud} 
+      [end]
+      [submenu] (Network) 
+         [submenu] (Communication) 
+            [exec] (Xbiff)  {xbiff} 
+         [end]
+      [end]
+      [submenu] (Science) 
+         [submenu] (Mathematics) 
+            [exec] (Xcalc)  {xcalc} 
+         [end]
+      [end]
+      [submenu] (Shells) 
+         [exec] (Bash)  {x-terminal-emulator  -T "Bash" -e sh -c "/bin/bash --login"} 
+         [exec] (Dash)  {x-terminal-emulator  -T "Dash" -e sh -c "/bin/dash -i"} 
+         [exec] (Sh)  {x-terminal-emulator  -T "Sh" -e sh -c "/bin/sh --login"} 
+      [end]
+      [submenu] (System) 
+         [submenu] (Administration) 
+            [exec] (Debian Task selector)  {x-terminal-emulator  -T "Debian Task selector" -e sh -c "su-to-root -c tasksel"} 
+            [exec] (Editres)  {editres} 
+            [exec] (Xclipboard)  {xclipboard} 
+            [exec] (Xfontsel)  {xfontsel} 
+            [exec] (Xkill)  {xkill} 
+            [exec] (Xrefresh)  {xrefresh} 
+         [end]
+         [submenu] (Hardware) 
+            [exec] (Xvidtune)  {xvidtune} 
+         [end]
+         [submenu] (Monitoring) 
+            [exec] (Pstree)  {x-terminal-emulator  -T "Pstree" -e sh -c "/usr/bin/pstree.x11"} 
+            [exec] (Top)  {x-terminal-emulator  -T "Top" -e sh -c "/usr/bin/top"} 
+            [exec] (Xconsole)  {xconsole -file /dev/xconsole} 
+            [exec] (Xev)  {x-terminal-emulator -e xev} 
+            [exec] (Xload)  {xload} 
+         [end]
+      [end]
+      [submenu] (Viewers) 
+         [exec] (Xditview)  {xditview} 
+      [end]
+   [end]
+   [submenu] (Blackbox) 
+      [config] (Configuration) 
+      [submenu] (Styles) 
+         [stylesdir] (~/.blackbox/styles) 
+         [sep]
+         [stylesdir] (/usr/share/blackbox/styles) 
+      [end]
+      [workspaces] (Workspaces) 
+      [sep]
+      [reconfig] (Reconfigure) 
+      [restart] (Restart) 
+      [exit] (Exit) 
+   [end]
+   [submenu] (Games) 
+      [submenu] (Toys) 
+         [exec] (Oclock)  {oclock} 
+         [exec] (Xclock \(analog\))  {xclock -analog} 
+         [exec] (Xclock \(digital\))  {xclock -digital -update 1} 
+         [exec] (Xeyes)  {xeyes} 
+         [exec] (Xlogo)  {xlogo} 
+      [end]
+   [end]
+   [submenu] (Help) 
+      [exec] (Xman)  {xman} 
+   [end]
+   [submenu] (Window Managers) 
+      [restart] (Blackbox)  {/usr/bin/blackbox} 
+      [restart] (FluxBox)  {/usr/bin/startfluxbox} 
+   [end]
+[end]

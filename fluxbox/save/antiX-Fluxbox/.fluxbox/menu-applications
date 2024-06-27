@@ -1,0 +1,154 @@
+
+[submenu] (antiX) </usr/share/icons/papirus-antix/48x48/apps/distributor-logo-antix.png>  
+[exec] (antiX Updater) {/usr/local/bin/yad-updater} </usr/share/icons/papirus-antix/48x48/apps/software-sources.png>
+[exec] (antiX User Manager) {su-to-root -X -c antix-user} </usr/share/icons/papirus-antix/48x48/apps/user-manager.png>
+[exec] (Backlight Brightness) {x-terminal-emulator -e backlight-brightness --pause} </usr/share/icons/papirus-antix/48x48/apps/backlight-brightness.png>
+[exec] (Chroot Rescue Scan) {x-terminal-emulator -e sudo chroot-rescue-scan --pause} </usr/share/icons/papirus-antix/48x48/apps/rescuetime.png>
+[exec] (CLI APT-based Package Manager) {x-terminal-emulator -e sudo /usr/local/bin/cli-aptiX --pause} </usr/share/icons/papirus-antix/48x48/apps/system-software-install.png>
+[exec] (Command Line Control Centre) {x-terminal-emulator -e antiX-cli-cc} </usr/share/icons/papirus-antix/48x48/apps/command-line-control-centre.png>
+[exec] (Date and Time) {/usr/local/bin/set_time-and_date.sh} </usr/share/icons/papirus-antix/48x48/apps/time.png>
+[exec] (Format USB) {su-to-root -X -c "formatusb"} </usr/share/icons/papirus-antix/48x48/devices/media-removable.png>
+[exec] (IceWM Toolbar Icon Manager) {/usr/local/bin/icewm-toolbar-icon-manager.sh} </usr/share/icons/papirus-antix/48x48/apps/icewm_editor.png>
+[exec] (JWM Tray Icon Manager) {/usr/local/bin/jwm-tray-icon-manager.sh} </usr/share/pixmaps/jwm_editor.png>
+[exec] (Live-USB Kernel Updater) {x-terminal-emulator -e sudo /usr/local/bin/live-kernel-updater --pause} </usr/share/icons/papirus-antix/48x48/apps/live-usb-kernel-updater.png>
+[exec] (Live USB Maker) {su-to-root -X -c live-usb-maker-gui-antix} </usr/share/icons/papirus-antix/48x48/apps/live-usb-maker.png>
+[exec] (Personal Menu Editor) {/usr/local/bin/fast_personal_menu_editor.sh} </usr/share/icons/papirus-antix/48x48/apps/icewm_peditor.png>
+[exec] (Snapshot) {su-to-root -X -c iso-snapshot} </usr/share/icons/papirus-antix/48x48/apps/iso-snapshot.png>
+[exec] (yad-color) {yad-color} </usr/share/icons/papirus-antix/48x48/apps/gcolor2.png>
+[end]
+[separator]
+[submenu] (办公) </usr/share/icons/papirus-antix/48x48/apps/applications-office.png>  
+[exec] (LibreOffice) {libreoffice } </usr/share/icons/papirus-antix/48x48/apps/libreoffice-startcenter.png>
+[exec] (LibreOffice Calc) {libreoffice --calc } </usr/share/icons/papirus-antix/48x48/apps/libreoffice-calc.png>
+[exec] (LibreOffice Draw) {libreoffice --draw } </usr/share/icons/papirus-antix/48x48/apps/libreoffice-draw.png>
+[exec] (LibreOffice Impress) {libreoffice --impress } </usr/share/icons/papirus-antix/48x48/apps/libreoffice-impress.png>
+[exec] (LibreOffice Math) {libreoffice --math } </usr/share/icons/papirus-antix/48x48/apps/libreoffice-math.png>
+[exec] (LibreOffice Writer) {libreoffice --writer } </usr/share/icons/papirus-antix/48x48/apps/libreoffice-writer.png>
+[exec] (qpdfview) {qpdfview --unique } </usr/share/icons/papirus-antix/48x48/apps/qpdfview.png>
+[end]
+[submenu] (编程) </usr/share/icons/papirus-antix/48x48/apps/applications-development.png>  
+[exec] (Geany) {geany } </usr/share/icons/papirus-antix/48x48/apps/geany.png>
+[exec] (Vim.tiny) {desktop-defaults-run -t vim } </usr/share/icons/papirus-antix/48x48/apps/vim.png>
+[end]
+[submenu] (附件) </usr/share/icons/papirus-antix/48x48/apps/applications-accessories.png>  
+[exec] (归档管理器) {file-roller } </usr/share/icons/papirus-antix/48x48/apps/file-roller.png>
+[exec] (Calcurse) {desktop-defaults-run -t calcurse} </usr/share/icons/papirus-antix/48x48/apps/evolution-calendar.png>
+[exec] (CherryTree) {cherrytree } </usr/share/icons/papirus-antix/48x48/apps/cherrytree.png>
+[exec] (ClipIt) {clipit} </usr/share/icons/papirus-antix/48x48/apps/clipit-trayicon.png>
+[exec] (Firejail Configuration Wizard) {firejail-ui} </usr/share/icons/papirus-antix/48x48/apps/firejail-ui.png>
+[exec] (Galculator) {galculator} </usr/share/icons/papirus-antix/48x48/apps/galculator.png>
+[exec] (Leafpad) {leafpad } </usr/share/icons/papirus-antix/48x48/apps/leafpad.png>
+[exec] (Midnight Commander Editor) {x-terminal-emulator -e mcedit} </usr/share/icons/papirus-antix/48x48/apps/MidnightCommander.png>
+[exec] (Other Desktops) {/usr/local/lib/desktop-session/desktop-session-menu-window ignore-settings} </usr/share/icons/papirus-antix/48x48/apps/user-desktop.png>
+[exec] (Rxvt Color Unicode Terminal) {urxvt} </usr/share/icons/papirus-antix/48x48/apps/terminal.png>
+[exec] (Searchmonkey) {searchmonkey} </usr/share/icons/papirus-antix/48x48/apps/searchmonkey.png>
+[exec] (SpaceFM File Search) {spacefm --find-files } </usr/share/icons/papirus-antix/48x48/apps/spacefm-find.png>
+[exec] (Updater) {/usr/bin/apt-notifier-unhide-Icon} </usr/share/icons/papirus-antix/48x48/apps/update-notifier.png>
+[exec] (Xfburn 刻录程序) {xfburn} </usr/share/icons/papirus-antix/48x48/apps/media-cdrom.png>
+[end]
+[submenu] (互联网) </usr/share/icons/papirus-antix/48x48/apps/preferences-system-network.png>  
+[exec] (Ceni) {desktop-defaults-run -t su-to-root -c /usr/sbin/Ceni} </usr/share/icons/papirus-antix/48x48/apps/ceni.png>
+[exec] (Claws Mail) {claws-mail } </usr/share/icons/papirus-antix/48x48/apps/claws-mail.png>
+[exec] (Connectshares) {connectshares} </usr/share/icons/papirus-antix/48x48/apps/connectshares.png>
+[exec] (Connectshares Configuration) {connectshares-config} </usr/share/icons/papirus-antix/48x48/apps/connectshares-config.png>
+[exec] (Connman UI Setup) {cmst} </usr/share/icons/papirus-antix/48x48/apps/preferences-system-network.png>
+[exec] (Dillo) {dillo } </usr/share/icons/papirus-antix/48x48/apps/dillo.png>
+[exec] (Disconnectshares) {disconnectshares} </usr/share/icons/papirus-antix/48x48/apps/disconnectshares.png>
+[exec] (Droopy) {droopy.sh} </usr/share/icons/papirus-antix/48x48/apps/droopy.png>
+[exec] (Firefox ESR) {/usr/lib/firefox-esr/firefox-esr } </usr/share/icons/papirus-antix/48x48/apps/firefox-esr.png>
+[exec] (gFTP) {gftp-gtk } </usr/share/icons/papirus-antix/48x48/apps/gftp.png>
+[exec] (GNOME PPP) {gnome-ppp} </usr/share/icons/papirus-antix/48x48/apps/gnome-ppp.png>
+[exec] (GPRS-EDGE-UMTS-Panel) {umts-panel} </usr/share/icons/papirus-antix/48x48/apps/nm-device-wireless.png>
+[exec] (HexChat) {hexchat --existing } </usr/share/icons/papirus-antix/48x48/apps/hexchat.png>
+[exec] (Links 2) {xlinks2} </usr/share/icons/papirus-antix/48x48/apps/links2.png>
+[exec] (Modem Manager GUI) {modem-manager-gui} </usr/share/icons/papirus-antix/48x48/apps/modem-manager-gui.png>
+[exec] (Search Bar) {search-bar} </usr/share/icons/papirus-antix/48x48/apps/eye-icon.png>
+[exec] (Transmission) {transmission-gtk } </usr/share/icons/papirus-antix/48x48/apps/transmission.png>
+[exec] (WPA Gui) {/usr/sbin/wpa_gui} </usr/share/icons/papirus-antix/48x48/apps/wpa_gui.png>
+[end]
+[submenu] (教育) </usr/share/icons/papirus-antix/48x48/apps/applications-science.png>  
+[exec] (LibreOffice Math) {libreoffice --math } </usr/share/icons/papirus-antix/48x48/apps/libreoffice-math.png>
+[end]
+[submenu] (首选项) </usr/share/icons/papirus-antix/48x48/apps/preferences-desktop.png>  
+[exec] (磁盘管理器) {su-to-root -X -c /usr/sbin/disk-manager} </usr/share/icons/papirus-antix/48x48/apps/disk-manager.png>
+[exec] (打印设置) {system-config-printer} </usr/share/icons/papirus-antix/48x48/devices/printer.png>
+[exec] (可选项配置工具) {/usr/bin/galternatives} </usr/share/icons/papirus-antix/48x48/apps/galternatives.png>
+[exec] (蓝牙管理器) {blueman-manager} </usr/share/icons/papirus-antix/48x48/apps/blueman.png>
+[exec] (自定义外观和体验) {lxappearance} </usr/share/icons/papirus-antix/48x48/apps/preferences-desktop-theme.png>
+[exec] (Adblock) {su-to-root -X -c block-advert.sh} </usr/share/icons/papirus-antix/48x48/apps/advert-block.png>
+[exec] (Add Key) {add-key} </usr/share/icons/papirus-antix/48x48/apps/preferences-desktop-keyboard-shortcuts.png>
+[exec] (Add Menu Item) {add-desktop} </usr/share/icons/papirus-antix/48x48/apps/add-menu-item.png>
+[exec] (ADSL/PPPOE Configuration) {x-terminal-emulator -e /usr/sbin/pppoeconf} </usr/share/icons/papirus-antix/48x48/apps/pppoeconf.png>
+[exec] (ARandR) {arandr} </usr/share/icons/papirus-antix/48x48/devices/display.png>
+[exec] (Configure Automount) {automount-config} </usr/share/icons/papirus-antix/48x48/apps/mountbox.png>
+[exec] (Connman UI Setup) {cmst} </usr/share/icons/papirus-antix/48x48/apps/preferences-system-network.png>
+[exec] (Firewall Configuration) {gufw} </usr/share/icons/papirus-antix/48x48/apps/gufw.png>
+[exec] (Keyboard Layouts) {gksu fskbsetting} </usr/share/icons/papirus-antix/48x48/apps/im-chooser.png>
+[exec] (Lxkeymap) {lxkeymap} </usr/share/icons/papirus-antix/48x48/devices/input-keyboard.png>
+[exec] (Menu Manager) {sudo menu_manager.sh} </usr/share/icons/papirus-antix/48x48/apps/menu-editor.png>
+[exec] (Mouse Configuration) {ds-mouse} </usr/share/icons/papirus-antix/48x48/devices/input-mouse.png>
+[exec] (Qt5 设置) {qt5ct} </usr/share/icons/papirus-antix/48x48/apps/qtcreator.png>
+[exec] (Remove Menu Item) {remove-desktop} </usr/share/icons/papirus-antix/48x48/apps/remove-menu-item.png>
+[exec] (Screenlight) {screenlight-menu.sh} </usr/share/icons/papirus-antix/48x48/apps/screenlight.png>
+[exec] (Set Font Size DPI) {gksu set-dpi} </usr/share/icons/papirus-antix/48x48/apps/fonts.png>
+[exec] (Wallpaper) {wallpaper.py} </usr/share/icons/papirus-antix/48x48/apps/preferences-desktop-wallpaper.png>
+[exec] (Windows无线驱动程序) {su-to-root -X -c /usr/sbin/ndisgtk} </usr/share/icons/papirus-antix/48x48/apps/ndisgtk.png>
+[end]
+[submenu] (图像) </usr/share/icons/papirus-antix/48x48/apps/applications-graphics.png>  
+[exec] (扫描易) {simple-scan} </usr/share/icons/papirus-antix/48x48/devices/scanner.png>
+[exec] (Gtkam 数码相机浏览器) {gtkam} </usr/share/icons/papirus-antix/48x48/apps/gtkam-camera.png>
+[exec] (LibreOffice Draw) {libreoffice --draw } </usr/share/icons/papirus-antix/48x48/apps/libreoffice-draw.png>
+[exec] (Mirage) {mirage } </usr/share/icons/papirus-antix/48x48/apps/mirage.png>
+[exec] (mtPaint Graphic Editor) {mtpaint } </usr/share/icons/papirus-antix/48x48/apps/mtpaint.png>
+[exec] (Screenshot) {antixscreenshot.sh} </usr/share/icons/papirus-antix/48x48/apps/gnome-screenshot.png>
+[end]
+[submenu] (系统) </usr/share/icons/papirus-antix/48x48/apps/preferences-system.png>  
+[exec] (任务管理器) {lxtask} </usr/share/icons/papirus-antix/48x48/apps/utilities-system-monitor.png>
+[exec] (新立得软件包管理器) {su-to-root -X -c synaptic} </usr/share/icons/papirus-antix/48x48/apps/synaptic.png>
+[exec] (App Select) {/usr/local/bin/app-select} </usr/share/icons/papirus-antix/48x48/apps/gnome-searchtool.png>
+[exec] (Boot Repair) {su-to-root -X -c bootrepair} </usr/share/icons/papirus-antix/48x48/apps/bootrepair.png>
+[exec] (Choose Startup Services) {rc-conf-wrapper.sh} </usr/share/icons/papirus-antix/48x48/apps/choose-startup-services.png>
+[exec] (Codecs Installer) {su-to-root -X -c codecs} </usr/share/icons/papirus-antix/48x48/apps/codecs.png>
+[exec] (Control Centre) {antixcc.sh} </usr/share/icons/papirus-antix/48x48/apps/control-centre.png>
+[exec] (Firetools) {firetools} </usr/share/icons/papirus-antix/48x48/apps/firetools.png>
+[exec] (GDebi 软件包安装程序) {su-to-root -X -c gdebi-gtk } </usr/share/icons/papirus-antix/48x48/mimetypes/gnome-mime-application-x-deb.png>
+[exec] (GParted) {gksu gparted} </usr/share/icons/papirus-antix/48x48/apps/gparted.png>
+[exec] (Grsync) {/usr/bin/grsync -i } </usr/share/icons/papirus-antix/48x48/apps/grsync.png>
+[exec] (Htop) {x-terminal-emulator -e htop} </usr/share/icons/papirus-antix/48x48/apps/htop.png>
+[exec] (luckyBackup) {/usr/bin/luckybackup} </usr/share/icons/papirus-antix/48x48/apps/luckybackup.png>
+[exec] (luckyBackup as Super User) {su-to-root -X -c /usr/bin/luckybackup} </usr/share/icons/papirus-antix/48x48/apps/luckybackup.png>
+[exec] (Midnight Commander) {x-terminal-emulator -e mc} </usr/share/icons/papirus-antix/48x48/apps/MidnightCommander.png>
+[exec] (Modem Manager GUI) {modem-manager-gui} </usr/share/icons/papirus-antix/48x48/apps/modem-manager-gui.png>
+[exec] (Mountbox) {mountbox} </usr/share/icons/papirus-antix/48x48/apps/mountbox.png>
+[exec] (Network Assistant) {gksu network-assistant} </usr/share/icons/papirus-antix/48x48/apps/network-assistant.png>
+[exec] (Package Installer) {su-to-root -X -c packageinstaller} </usr/share/icons/papirus-antix/48x48/apps/packageinstaller.png>
+[exec] (PC Information) {inxi-gui} </usr/share/icons/papirus-antix/48x48/apps/info_blue.png>
+[exec] (Repo Manager) {su-to-root -X -c repo-manager} </usr/share/icons/papirus-antix/48x48/apps/repo-manager.png>
+[exec] (Root 终端) {gksu /usr/bin/x-terminal-emulator} </usr/share/icons/papirus-antix/48x48/apps/gksu-root-terminal.png>
+[exec] (ROX Filer) {rox-filer} </usr/share/icons/papirus-antix/48x48/apps/rox-filer.png>
+[exec] (ROX Filer as root) {su-to-root -X -c rox-filer} </usr/share/icons/papirus-antix/48x48/places/folder-red.png>
+[exec] (ROXTerm) {roxterm} </usr/share/icons/papirus-antix/48x48/apps/roxterm.png>
+[exec] (SpaceFM) {spacefm } </usr/share/icons/papirus-antix/48x48/apps/spacefm.png>
+[end]
+[submenu] (影音) </usr/share/icons/papirus-antix/48x48/apps/applications-multimedia.png>  
+[exec] (Alsamixer) {x-terminal-emulator -e alsamixer} </usr/share/icons/papirus-antix/48x48/apps/alsamixer-equalizer.png>
+[exec] (Alsamixer Equalizer) {x-terminal-emulator -e alsamixer -D equalizer} </usr/share/icons/papirus-antix/48x48/apps/alsamixer-equalizer.png>
+[exec] (Asunder CD Ripper) {asunder } </usr/share/icons/papirus-antix/48x48/apps/asunder.png>
+[exec] (Celluloid) {celluloid } </usr/share/icons/papirus-antix/48x48/apps/io.github.celluloid_player.Celluloid.png>
+[exec] (GUVCView) {guvcview} </usr/share/icons/papirus-antix/48x48/apps/guvcview.png>
+[exec] (MPS-YouTube) {x-terminal-emulator -e mpsyt } </usr/share/icons/papirus-antix/48x48/apps/youtube.png>
+[exec] (MPV Media Player) {mpv --player-operation-mode=pseudo-gui -- } </usr/share/icons/papirus-antix/48x48/apps/mpv.png>
+[exec] (Poor Man's Radio Player) {x-terminal-emulator -e pmrp} </usr/share/icons/papirus-antix/48x48/apps/library-internet-radio.png>
+[exec] (SMTube) {smtube} </usr/share/icons/papirus-antix/48x48/apps/smtube.png>
+[exec] (Sound Card Chooser) {alsa-set-default-card} </usr/share/icons/papirus-antix/48x48/apps/soundcard.png>
+[exec] (Speaker Test) {x-terminal-emulator -e speaker-test --channels 2 --test wav --nloops 3} </usr/share/icons/papirus-antix/48x48/apps/preferences-desktop-sound.png>
+[exec] (Streamtuner2) {streamtuner2} </usr/share/icons/papirus-antix/48x48/apps/streamtuner2.png>
+[exec] (WinFF) {winff } </usr/share/icons/papirus-antix/48x48/apps/winff.png>
+[exec] (XMMS) {xmms} </usr/share/icons/papirus-antix/48x48/apps/xmms.png>
+[end]
+[submenu] (游戏) </usr/share/icons/papirus-antix/48x48/apps/applications-games.png>  
+[exec] (对对碰) {gnome-mahjongg} </usr/share/icons/papirus-antix/48x48/apps/gnome-mahjongg.png>
+[exec] (DOSBox Emulator) {dosbox} </usr/share/icons/papirus-antix/48x48/apps/dosbox.png>
+[exec] (Gweled) {gweled} </usr/share/icons/papirus-antix/48x48/apps/gweled.png>
+[end]
+

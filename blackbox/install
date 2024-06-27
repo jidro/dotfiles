@@ -1,0 +1,19 @@
+#!/bin/env bash
+
+# Back up the original blackbox menu file, 
+# and copy the blackbox menu file in the directory to the user's home directory.
+mv -v ~/.blackbox-menu ~/.blackbox-menu.bak
+cp -rfpv .blackbox-menu ~/
+
+# Back up the original blackboxrc configuration file, 
+# and copy the blackboxrc configuration file in this directory to the user's home directory.
+mv -v ~/.blackboxrc ~/.blackboxrc.bak
+cp -rfpv .blackboxrc ~/
+
+# If the above steps do not work, try the following steps to modify the blackbox configuration file.
+
+# Back up the original blackbox menu configuration file and black menu configuration file in the system directory, 
+# and copy the blackbox folder in the directory to the system directory for configuration.
+#sudo mv -v /etc/X11/blackbox/blackbox-menu /etc/X11/blackbox/blackbox-menu.bak
+#sudo mv -v /etc/X11/blackbox/black-menu.save /etc/X11/blackbox/black-menu.save.bak
+#sudo cp -rfpv blackbox/ /etc/X11/

@@ -1,0 +1,469 @@
+# ============================================================================ #
+#                     BASH - Heavily Customized Environment
+# 			 _               _
+#			| |__   __ _ ___| |__  _ __ ___
+#			| '_ \ / _` / __| '_ \| '__/ __|
+#			| |_) | (_| \__ \ | | | | | (__
+#			|_.__/ \__,_|___/_| |_|_|  \___|
+#
+#		 Simple but Cute and Helpful (TM) Bash Settings
+# ============================================================================ #
+
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# ============================================================================ #
+
+# The various configurations of the bash shell in the terminal.
+# Terminal Color Setting.
+red='\[\e[0;31m\]'
+RED='\[\e[1;31m\]'
+blue='\[\e[0;34m\]'
+BLUE='\[\e[1;34m\]'
+cyan='\[\e[0;36m\]'
+CYAN='\[\e[1;36m\]'
+green='\[\e[0;32m\]'
+GREEN='\[\e[1;32m\]'
+yellow='\[\e[0;33m\]'
+YELLOW='\[\e[1;33m\]'
+purple='\[\e[0;35m\]'
+PURPLE='\[\e[1;35m\]'
+# Close all properties.
+nc='\[\e[0m\]'
+# Character Frames.
+FC1='\342\224\214'
+FC2='\342\224\224'
+FC3='\342\225\274'
+FC4='\342\224\200'
+FC5='\342\234\223'
+FC6='\342\234\227'
+FC7='\342\226\210'
+
+# ============================================================================ #
+
+# Terminal Color Setting.
+# This part is the tty setting of dracula to beautify tty.
+if [ "$TERM" = "linux" ]; then
+	printf %b '\e[40m' '\e[8]' # set default background to color 0 'dracula-bg'
+	printf %b '\e[37m' '\e[8]' # set default foreground to color 7 'dracula-fg'
+	printf %b '\e]P0282a36'    # redefine 'black'          as 'dracula-bg'
+	printf %b '\e]P86272a4'    # redefine 'bright-black'   as 'dracula-comment'
+	printf %b '\e]P1ff5555'    # redefine 'red'            as 'dracula-red'
+	printf %b '\e]P9ff7777'    # redefine 'bright-red'     as '#ff7777'
+	printf %b '\e]P250fa7b'    # redefine 'green'          as 'dracula-green'
+	printf %b '\e]PA70fa9b'    # redefine 'bright-green'   as '#70fa9b'
+	printf %b '\e]P3f1fa8c'    # redefine 'brown'          as 'dracula-yellow'
+	printf %b '\e]PBffb86c'    # redefine 'bright-brown'   as 'dracula-orange'
+	printf %b '\e]P4bd93f9'    # redefine 'blue'           as 'dracula-purple'
+	printf %b '\e]PCcfa9ff'    # redefine 'bright-blue'    as '#cfa9ff'
+	printf %b '\e]P5ff79c6'    # redefine 'magenta'        as 'dracula-pink'
+	printf %b '\e]PDff88e8'    # redefine 'bright-magenta' as '#ff88e8'
+	printf %b '\e]P68be9fd'    # redefine 'cyan'           as 'dracula-cyan'
+	printf %b '\e]PE97e2ff'    # redefine 'bright-cyan'    as '#97e2ff'
+	printf %b '\e]P7f8f8f2'    # redefine 'white'          as 'dracula-fg'
+	printf %b '\e]PFffffff'    # redefine 'bright-white'   as '#ffffff'
+	clear
+fi
+
+# ============================================================================ #
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# ============================================================================ #
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+# ============================================================================ #
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups:erasedups
+# ... or force ignoredups and ignorespace
+#HISTCONTROL=ignoreboth
+
+# ============================================================================ #
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# ============================================================================ #
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# ============================================================================ #
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# ============================================================================ #
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# ============================================================================ #
+
+# Save each command to the history file as it's executed.  #517342
+# This does mean sessions get interleaved when reading later on, but this
+# way the history is always up to date.  History is not synced across live
+# sessions though; that is what `history -n` does.
+# Disabled by default due to concerns related to system recovery when $HOME
+# is under duress, or lives somewhere flaky (like NFS).  Constantly syncing
+# the history will halt the shell prompt until it's finished.
+#PROMPT_COMMAND='history -a'
+
+# ============================================================================ #
+
+# Disable completion when the input buffer is empty.  i.e. Hitting tab
+# and waiting a long time for bash to expand all of $PATH.
+shopt -s no_empty_cmd_completion
+
+# ============================================================================ #
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# ============================================================================ #
+
+# set variable identifying the chroot you work in (used in the prompt below)
+#if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+#	debian_chroot=$(cat /etc/debian_chroot)
+#fi
+
+# ============================================================================ #
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+	xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# ============================================================================ #
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+	if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+	else
+		color_prompt=
+	fi
+fi
+
+unset color_prompt force_color_prompt
+
+# ============================================================================ #
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
+# ============================================================================ #
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	alias dir='dir --color=auto'
+	alias vdir='vdir --color=auto'
+
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
+
+# ============================================================================ #
+
+# some more ls aliases
+alias ll='ls -lh'
+alias la='ls -A'
+alias l='ls -CF'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias diff='colordiff'
+#alias upclean='sudo aptitude update -y ; sudo aptitude upgrade -y ; sudo aptitude full-upgrade -y && sudo apt-get autoremove && sudo aptitude autoclean && sudo aptitude clean'
+#alias debclean="dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P ${tty_reset}"
+
+# ============================================================================ #
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
+fi
+
+# ============================================================================ #
+
+# Set LS_COLORS environment
+if [[ ("$TERM" = *256color || "$TERM" = screen* || "$TERM" = xterm* ) && -f /etc/lscolor-256color ]]; then
+	eval $(dircolors -b /etc/lscolor-256color)
+else
+	eval $(dircolors)
+fi
+
+# ============================================================================ #
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# ============================================================================ #
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+
+unset rc
+
+# ============================================================================ #
+
+# Turn on the NmLk key
+#xmodmap -e 'keycode 77 = NoSymbol Num_Lock'
+
+# ============================================================================ #
+
+# ignore upper and lowercase when TAB completion
+#bind "set completion-ignore-case on"
+
+# ============================================================================ #
+
+# EXPORT Setting
+export EDITOR='nano'
+export VISUAL='nano'
+export PAGER='most'
+
+# Setting Chinese locales.
+#export LANG="zh_CN.UTF-8"
+
+# Fcitx Setting
+##export GLFW_IM_MODULE=ibus
+#export GLFW_IM_MODULE=fcitx
+#export XMODIFIERS=@im=fcitx
+#export GTK_IM_MODULE=fcitx
+#export SDL_IM_MODULE=fcitx
+#export INPUT_METHOD=fcitx
+#export QT_IM_MODULE=fcitx
+#export XIM_PROGRAM=fcitx
+#export XIM=fcitx
+
+# iBus always on.
+# create home/user/.xprofile, add following commands
+#export XMODIFIERS=@im=ibus
+#export GTK_IM_MODULE=ibus
+#export QT_IM_MODULE=ibus
+#ibus-daemon -drx
+
+# ============================================================================ #
+
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# ============================================================================ #
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# ============================================================================ #
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# ============================================================================ #
+
+# Add /bin in the home directory as the default path.
+
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
+
+# ============================================================================ #
+
+# Add sbin directories to PATH.
+# This is useful on systems that have sudo
+echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
+echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
+export PATH=$HOME/.local/bin:$PATH
+export PATH=/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt/sysimage/usr/sbin:/mnt/sysimage/bin:/mnt/sysimage/usr/bin:/opt/bin:/opt/sbin
+
+# ============================================================================ #
+
+# HomeBrew Setting
+# Homebrew Required Settings.
+#test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+#test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Homebrew Clean Up Configuration After Installing Software.
+#export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
+# Homebrew Replacement Software Source Settings
+#export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.bfsu.edu.cn/git/homebrew/brew.git"
+#export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.bfsu.edu.cn/git/homebrew/homebrew-core.git"
+#export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles"
+# Homebrew Settings That Only Need To Be Configured Once After Installation.
+#echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.profile
+#test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+#test -r ~/.profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
+#test -r ~/.zprofile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zprofile
+#echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.profile
+#echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
+
+# ============================================================================ #
+
+# HomeBrew Apt Setting
+##echo 'export PATH="/home/linuxbrew/.linuxbrew/opt/apt/bin:$PATH"' >> ~/.profile
+#export PATH="/home/linuxbrew/.linuxbrew/opt/apt/bin:$PATH"
+#export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/apt/lib"
+#export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/apt/include"
+#export PKG_CONFIG_PATH="/home/linuxbrew/.linuxbrew/opt/apt/lib/pkgconfig"
+
+# ============================================================================ #
+
+# HomeBrew AutoJump Setting
+#[ -f /home/linuxbrew/.linuxbrew/etc/profile.d/autojump.sh ] && . /home/linuxbrew/.linuxbrew/etc/profile.d/autojump.sh
+
+# ============================================================================ #
+
+# HomeBrew Mono Setting
+#export MONO_GAC_PREFIX="/home/linuxbrew/.linuxbrew"
+
+# ============================================================================ #
+
+# HomeBrew bash-completion Setting
+# It is best to write this configuration to ~/.bash_profile file.
+#[[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
+
+# ============================================================================ #
+
+# HomeBrew pyenv-virtualenv Setting
+#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# ============================================================================ #
+
+# Cargo Setting
+#source $HOME/.cargo/env
+
+# ============================================================================ #
+
+# TheFuck Setting
+#eval $(thefuck --alias)
+
+# ============================================================================ #
+
+# Ranger Setting
+export RANGER_LOAD_DEFAULT_RC=FALSE
+
+# ============================================================================ #
+
+# Custom Prompt String
+# If this is an xterm set the title to user@host:dir
+#case "$TERM" in
+#[aEkx]term*|rxvt*|gnome*|konsole*|interix|tmux*)
+#	PS1="\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ "
+#	;;
+#screen*)
+#	PS1='\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ '
+#	;;
+#*)
+#    ;;
+#esac
+
+# ============================================================================ #
+
+# Custom Prompt String
+#if [ "$color_prompt" = yes ]; then
+#	PS1='\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ '
+#else
+#	PS1='\342\224\214(Host:\H)-(User:\u)-(Time:\A)-(Dir:\w)  \n\342\224\224\342\225\274[\W]\$ '
+#fi
+
+# ============================================================================ #
+
+# Custom Prompt String
+#if [ "$UID" = 0 ]; then
+#	PS1="$red\u$nc@$red\H$nc:$CYAN\w$nc\\n$red#$nc "
+#else
+#	PS1="$PURPLE\u$nc@$CYAN\H$nc:$GREEN\w$nc\\n$GREEN\$$nc "
+#fi
+
+# ============================================================================ #
+
+# Custom Prompt String
+# The two different formats of bash that I have beautified are actually roughly the same,
+# except that the date display is added to the above one.
+# The first is the default custom prompt string for Gentoo.
+#PS1="\[\033[01;31m\]\h\[\033[01;34m\] \w \$\[\033[00m\] "
+# Secondly,the default custom prompt string of MXLinux system is presented.
+#PS1="$PURPLE\u$nc@$CYAN\H$nc:$GREEN\w$nc\\n$GREEN\$$nc "
+# Once again,the default custom prompt string of the ArchLinux system.
+#PS1='[\u@\h \W]\$ '
+# Finally,I set the custom prompt string.
+# The following is my custom prompt string,
+# which is also default custom prompt string for the bashrc.
+
+# The following is a presentation of Bash Prompt customization.
+# Customize a function that displays the final command exit status.
+# Last Exit Status.
+Exit_Status()
+{
+if [[ $? == 0 ]]; then
+ printf "\e[1;32m$FC5"
+else
+ printf "\e[1;31m$FC6"
+fi
+}
+# Come on, here is the main content of the custom Bash Prompt customization.
+if [ "$UID" = 0 ]; then
+	PS1="$red\u$nc@$red\H$nc:$CYAN\w$nc\\n$red#$nc "
+	PS2="->"
+else
+	PS1="$nc$FC1(\$(Exit_Status)$nc)$FC4[$yellow\u$nc@$green\H$nc]$FC4($cyan\A$nc)$FC4($purple\w$nc)  \n$nc$FC2$FC3$nc[\W]$nc\$$nc "
+	PS2="=>"
+fi
+# The following is a backup of the Bash Prompt customization that I used to feel was quite good,
+# but I don't want to use it anymore as it is a bit bulky.
+# It has been replaced with the Bash Prompt customization above.
+# export PS1="$nc$FC1$GREEN(${nc}Host:$green\H$GREEN)-(${nc}User:$yellow\u$GREEN)-(${nc}Time:$purple\A$GREEN)-(${nc}Dir:${nc}\w$GREEN)  \n$nc$FC2$FC3$nc[\W]$nc\$$nc "
+# export PS2="~>"
+# The above four are my favorite bash custom prompt strings.

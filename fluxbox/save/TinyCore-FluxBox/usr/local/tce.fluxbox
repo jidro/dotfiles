@@ -1,0 +1,10 @@
+[submenu] (Applications)
+[exec](Terminal){aterm }
+[exec](Chromium){chromium-browser }
+[exec](ezremaster){ezremaster}
+[exec](Leafpad){leafpad }
+[exec](RunSoftware){nautilus-autorun-software }
+[exec](NewWindow){nautilus --new-window}
+[exec](tc-install){tc-install}
+[exec](Wifi){cliorx sudo wifi.sh}
+[end] TCE

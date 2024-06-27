@@ -1,0 +1,79 @@
+[begin] (--antiX--)
+    [exec] (终端) {desktop-defaults-run -t} </usr/share/icons/numix-bevel-antix/48x48/apps/terminal.png> 
+    [exec] (主目录) {desktop-defaults-run -fm} </usr/share/icons/numix-bevel-antix/48x48/apps/file-manager.png>
+    [separator]
+    [exec] (浏览器) {desktop-defaults-run -b} </usr/share/icons/numix-bevel-antix/48x48/apps/web-browser.png>
+    [exec] (文本编辑器) {desktop-defaults-run -te} </usr/share/icons/numix-bevel-antix/48x48/apps/text-editor.png>
+    [exec] (App Select) {/usr/local/bin/app-select} </usr/share/icons/papirus-antix/48x48/apps/gnome-searchtool.png>
+    [separator]
+    [submenu] (Personal) </usr/share/icons/numix-bevel-antix/48x48/apps/preferences-desktop-user.png>
+        [begin] (Personal)
+        [include] (~/.fluxbox/personal)
+    [end]
+    [submenu] (应用程序) </usr/share/icons/numix-bevel-antix/48x48/apps/applications.png>
+        [begin] (应用程序)
+        [include] (~/.fluxbox/menu-applications)
+    [end]
+    [exec] (Refresh Menu) {desktop-menu --write-out-global} </usr/share/icons/numix-bevel-antix/48x48/apps/update-manager.png>
+    [separator]
+    [submenu] (桌面) </usr/share/icons/numix-bevel-antix/48x48/apps/user-desktop.png>
+        [submenu] (Other Desktops) </usr/share/icons/numix-bevel-antix/48x48/apps/user-desktop.png>
+            [begin] (Other Desktops)
+            [include] (/usr/share/desktop-session/wm-menus/fluxbox-wm-menu)
+        [end]
+        [exec] (RoxPanel on/off) {paneltoggle.sh} </usr/share/icons/numix-bevel-antix/48x48/apps/gnome-panel.png>
+        [exec] (Conky on/off) {conkytoggle.sh} </usr/share/icons/numix-bevel-antix/48x48/apps/utilities-system-monitor.png>
+    [end]
+    [separator] 
+        [exec] (App Killer) {xkill} </usr/share/icons/numix-bevel-antix/48x48/apps/appkill.png>
+    [exec] (控制中心) {antixcc.sh} </usr/share/icons/numix-bevel-antix/48x48/apps/control-center2.png>
+    [separator]
+    [submenu] (帮助(_H)) </usr/share/icons/numix-bevel-antix/48x48/apps/help-browser.png> 
+        [submenu] (antiX) </usr/share/icons/numix-bevel-antix/48x48/places/folder.png>
+            [exec] (antiX Videos) {dillo /usr/share/antiX/antix_help_videos.html}
+            [exec] (antiX FAQ) {dillo /usr/share/antiX/FAQ/index.html}
+            [exec] (antiX-live How-To) {dillo /usr/share/antiX/Boot_Menu/antiX-gfxboot.html}
+            [separator]
+            [exec] (Rox Manual) {dillo /usr/share/doc/rox-filer/html/Manual.html}
+            [exec] (Announcements) {dillo https://www.antixforum.com/forums/forum/news/announcements/}
+            [exec] (antixforum.com) {dillo https://www.antixforum.com}
+            [exec] (MX/antiX Wiki) {dillo https://mxlinux.org/wiki/}
+        [end]
+        [separator]
+        [submenu] (Fluxbox) </usr/share/icons/papirus-antix/48x48/places/folder.png>
+            [exec] (Fluxbox Docs) {dillo http://fluxbox.sourceforge.net/docbook/en/html/}
+            [exec] (Fluxbox FAQ) {dillo http://fluxbox-wiki.org/FAQ_en.html}
+            [exec] (Fluxbox Wiki) {dillo http://fluxbox-wiki.org/}
+            [separator]
+            [exec] (Arch Wiki) {dillo http://wiki.archlinux.org/index.php/Fluxbox}
+        [end]
+        [separator]
+        [submenu] (应用程序) </usr/share/icons/numix-bevel-antix/48x48/places/folder.png>
+            [exec] (Firewall) {dillo http://gufw.org/}
+            [exec] (Partimage) {dillo http://www.partimage.org/Partimage-manual_Usage}
+        [end]
+        [submenu] (Man Pages) </usr/share/icons/numix-bevel-antix/48x48/places/folder.png>
+            [exec] (Irssi) {desktop-defaults-run -t man irssi}
+            [exec] (mc) {desktop-defaults-run -t man mc}
+            [exec] (mocp) {desktop-defaults-run -t man mocp}
+            [exec] (Nano) {desktop-defaults-run -t man nano}
+            [exec] (Rss/Atom) {desktop-defaults-run -t man newsboat}
+            [exec] (终端) {desktop-defaults-run -t man urxvt}
+            [exec] (Torrent) {desktop-defaults-run -t man rtorrent}
+        [end]
+    [end]
+    [exec] (运行) {gexec} </usr/share/icons/numix-bevel-antix/48x48/apps/gnome-run.png>
+    [submenu] (Fluxbox Settings) </usr/share/icons/numix-bevel-antix/48x48/apps/applications-system.png>
+        [config] (Configuration)
+        [submenu] (Styles) <Style>
+            [stylesdir] (~/.fluxbox/styles)
+            [stylesmenu] (Fluxbox Styles) {/usr/share/fluxbox/styles}
+        [end]
+        [workspaces] (Workspaces)
+        [separator]
+        [reconfig] (Reconfigure)
+        [restart] (Restart)
+    [end]
+    [exec] (退出) {desktop-session-exit} </usr/share/icons/numix-bevel-antix/48x48/apps/application-exit.png>
+    [exec] (antiX Installer) {sudo minstall} </usr/share/icons/msystem.png>
+[end]

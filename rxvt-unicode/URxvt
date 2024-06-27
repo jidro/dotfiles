@@ -1,0 +1,113 @@
+! System-wide defaults for rxvt-unicode
+!
+! PLEASE NOTE: URxvt.* resources set here will override users' Rxvt.*
+! resources. Edit with care.
+
+! Uncomment to use the historical terminfo entry
+
+URxvt.termName:		rxvt
+
+! Uncomment for color/font settings like in Debian's uxterm
+!URxvt Font and Locale
+URxvt.locale:			true
+URxvt.utf8:			true
+URxvt*utf8Title:		true
+URxvt.VT100.utf8:		true
+URxvt.VT100.locale:		true
+URxvt*locale:			zh_CN.UTF-8
+! Fonts
+URxvt*boldFont:fixed:		size=11
+!URxvt.font: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+!URxvt*.font:  xft:DejaVu Sans Mono:autohint=true:size=10
+URxvt*font: xft:Terminus:Regular:pixelsize=14
+URxvt*boldFont: xft:Terminus:Bold:pixelsize=10
+
+!URxvt*.geometry:		90x32
+URxvt*.buffered:		true
+
+!input method
+URxvt*inputMethod:		fictx
+
+! Fix errors
+URxvt*skipBuiltinGlyphs:	true
+
+! Special features
+URxvt*.perl-lib:		/usr/local/lib/urxvt/perl
+URxvt*.perl-ext-common:		default,matcher
+URxvt*.keysym.C-S-Up:		perl:font:increment
+URxvt*.keysym.C-S-Down:		perl:font:decrement
+
+! URL Matcher
+URxvt*.url-launcher:		/etc/alternatives/x-www-browser
+URxvt*.matcher.button:		1
+URxvt*.keysym.C-Delete:		perl:matcher:last
+URxvt*.keysym.M-Delete:		perl:matcher:list
+
+! Shading and Fading
+URxvt*.transparent:		false
+URxvt*.shading:			50
+URxvt*.fading:			30
+!URxvt*.blurRadius:		0
+
+! Scrollbar
+URxvt*scrollBar: 		false
+!URxvt*rightScrollBar: 		true
+URxvt*SaveLines: 		4096
+URxvt*jumpScroll: 		true
+
+! Theme color
+URxvt.reverseVideo: true
+
+URxvt*color0:		#000000
+URxvt*color8:		#4D4D4D
+URxvt*color1:		#FF5555
+URxvt*color9:		#FF6E67
+URxvt*color2:		#50FA7B
+URxvt*color10:		#5AF78E
+URxvt*color3:		#F1FA8C
+URxvt*color11:		#F4F99D
+URxvt*color4:		#BD93F9
+URxvt*color12:		#CAA9FA
+URxvt*color5:		#FF79C6
+URxvt*color13:		#FF92D0
+URxvt*color6:		#8BE9FD
+URxvt*color14:		#9AEDFE
+URxvt*color7:		#BFBFBF
+URxvt*color15:		#E6E6E6
+
+URxvt*colorUL:		#0000FF
+URxvt*colorBD:		#00FF00
+
+URxvt*.background:	#282C32
+URxvt*foreground:	#C0E5f1
+URxvt*.underlineColor:	#4AD5E1
+URxvt*.pointerColor:	#DC74D1
+URxvt*.cursorColor:	#E0E080
+
+! Tabbing Menu colors
+URxvt*.tabbed.tabbar-bg:	0
+URxvt*.tabbed.tabbar-fg:	6
+URxvt*.tabbed.tab-bg:		0
+URxvt*.tabbed.tab-fg:		5
+
+! Examples for custom keysyms overrides
+
+!URxvt.keysym.KP_Up: ^[[A
+!URxvt.keysym.KP_Right: ^[[C
+!URxvt.keysym.KP_Left: ^[[D
+!URxvt.keysym.KP_Down: ^[[B
+!URxvt.keysym.KP_Insert: ^[[2~
+!URxvt.keysym.KP_Delete: ^[[3~
+!URxvt.keysym.KP_Add: +
+!URxvt.keysym.KP_Subtract: -
+!URxvt.keysym.KP_Multiply: *
+!URxvt.keysym.KP_Divide: /
+!URxvt.keysym.KP_Enter: ^M
+
+! Uncomment for aterm-like scrolling keys
+
+!URxvt.keysym.Shift-Up: command:\033]720;1\007
+!URxvt.keysym.Shift-Down: command:\033]721;1\007
+
+! Debian package customizations follow.
+URxvt*ptyInitialErase:		true

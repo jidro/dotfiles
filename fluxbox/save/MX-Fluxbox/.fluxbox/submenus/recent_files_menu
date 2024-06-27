@@ -1,0 +1,3 @@
+[begin] (Recent files)
+[exec] ([home/]   mx/) { xdg-open "/home/mx" } </usr/share/icons/Papirus-mxblue-darkpanes/48x48/places/folder.png>
+[end]

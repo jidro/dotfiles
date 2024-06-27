@@ -1,0 +1,33 @@
+<JWM>
+
+<!-- Tray at the bottom. -->
+<!-- Tray x="0" y="-1" height="25" autohide="off" -->
+<Tray autohide="off" insert="right" x="0" y="-1" width="0" height="28" layer="above" layout="horizontal" halign="left" valign="bottom">
+
+    <!-- Additional TrayButton attribute: label -->
+    <TrayButton icon="/usr/share/jwm/jwm-red.svg">root:1</TrayButton>
+    <Spacer width="2"/>
+    <TrayButton label="_">showdesktop</TrayButton>
+    <TrayButton popup="Browser" label=" W " border="true">exec:defaultbrowser</TrayButton>
+    <TrayButton popup="Terminal" label=" T " border="true">exec:defaultterminal</TrayButton>
+    <Spacer width="2"/>
+
+    <!-- Additional Pager attributes; width, height -->
+    <!-- Pager labeled="true"/ -->
+    <Pager/>
+
+    <!-- Additional TaskList attribute: maxwidth -->
+    <!-- TaskList maxwidth="256"/ -->
+    <TaskList maxwidth="125"/>
+
+
+    <!-- Additional Dock attribute: none -->
+    <Dock/>
+
+    <!-- Additional Clock attributes: format, height, width, zone -->
+    <!-- Clock format="%H:%M"><Button mask="123">exec:xclock</Button></Clock -->
+    <Clock format="%H:%M  "></Clock>
+
+</Tray>
+
+</JWM>

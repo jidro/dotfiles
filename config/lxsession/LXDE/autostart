@@ -1,0 +1,9 @@
+@lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+#@xscreensaver -no-splash
+@fcitx5
+@numlockx off
+#@lxqt-powermanagement
+#@picom -CGb &
+cbatticon
+dunst &

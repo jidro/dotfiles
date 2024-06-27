@@ -1,0 +1,92 @@
+# Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)
+
+   [submenu] (帮助) {}
+      [exec] (Xman) {xman} <>
+   [end]
+   [submenu] (窗口管理器) {}
+      [restart] (FluxBox)  {/usr/bin/startfluxbox}
+   [end]
+   [submenu] (应用程序) {}
+      [submenu] (编程) {}
+         [exec] (Tclsh8.6) { x-terminal-emulator -T "Tclsh8.6" -e /usr/bin/tclsh8.6} <>
+      [end]
+      [submenu] (编辑器) {}
+         [exec] (Xedit) {xedit} <>
+      [end]
+      [submenu] (查看器) {}
+         [exec] (Xditview) {xditview} <>
+      [end]
+      [submenu] (辅助工具) {}
+         [exec] (Xmag) {xmag} <>
+      [end]
+      [submenu] (科学) {}
+         [submenu] (数学) {}
+            [exec] (Bc) { x-terminal-emulator -T "Bc" -e /usr/bin/bc} <>
+            [exec] (Dc) { x-terminal-emulator -T "Dc" -e /usr/bin/dc} <>
+            [exec] (Xcalc) {xcalc} <>
+         [end]
+      [end]
+      [submenu] (声音) {}
+         [exec] (flake) { x-terminal-emulator -T "flake" -e /usr/bin/flake} <>
+      [end]
+      [submenu] (图形) {}
+         [exec] (X Window Snapshot) {xwd | xwud} <>
+      [end]
+      [submenu] (网络) {}
+         [submenu] (通信) {}
+            [exec] (Telnet) { x-terminal-emulator -T "Telnet" -e /usr/bin/telnet.netkit} <>
+            [exec] (Xbiff) {xbiff} <>
+         [end]
+         [submenu] (网络浏览) {}
+            [exec] (ELinks WWW browser) { x-terminal-emulator -T "ELinks WWW browser" -e /usr/bin/elinks} <>
+         [end]
+         [submenu] (系统监控) {}
+            [exec] (Mtr) {mtr} <>
+         [end]
+      [end]
+      [submenu] (系统) {}
+         [submenu] (管理) {}
+            [exec] (DSL/PPPoE configuration tool) { x-terminal-emulator -T "DSL/PPPoE configuration tool" -e /usr/sbin/pppoeconf} </usr/share/pixmaps/pppoeconf.xpm>
+            [exec] (Editres) {editres} <>
+            [exec] (GTK+ 2.0 Theme Switch) {/usr/bin/gtk-theme-switch2} <>
+            [exec] (idesk) {/usr/bin/idesk} <>
+            [exec] (Orphaner (all\)) { x-terminal-emulator -T "Orphaner (all)" -e su-to-root -c '/usr/sbin/orphaner -a'} <>
+            [exec] (Orphaner - editkeep) { x-terminal-emulator -T "Orphaner - editkeep" -e su-to-root -c '/usr/sbin/editkeep'} <>
+            [exec] (Orphaner (libs\)) { x-terminal-emulator -T "Orphaner (libs)" -e su-to-root -c /usr/sbin/orphaner} <>
+            [exec] (Xclipboard) {xclipboard} <>
+            [exec] (Xfontsel) {xfontsel} <>
+            [exec] (Xkill) {xkill} <>
+            [exec] (Xrefresh) {xrefresh} <>
+         [end]
+         [submenu] (软件包管理) {}
+            [exec] (Aptitude Package Manager (text\)) { x-terminal-emulator -T "Aptitude Package Manager (text)" -e /usr/bin/aptitude-curses} <>
+            [exec] (Synaptic Package Manager) {x-terminal-emulator -e synaptic-pkexec} </usr/share/synaptic/pixmaps/synaptic_32x32.xpm>
+         [end]
+         [submenu] (系统监控) {}
+            [exec] (GKrellM) {/usr/bin/gkrellm} </usr/share/pixmaps/gkrellm.xpm>
+            [exec] (Pstree) { x-terminal-emulator -T "Pstree" -e /usr/bin/pstree.x11} </usr/share/pixmaps/pstree16.xpm>
+            [exec] (Top) { x-terminal-emulator -T "Top" -e /usr/bin/top} <>
+            [exec] (Xconsole) {xconsole -file /dev/xconsole} <>
+            [exec] (Xev) {x-terminal-emulator -e xev} <>
+            [exec] (Xload) {xload} <>
+         [end]
+         [submenu] (硬件) {}
+            [exec] (fbxkb) {/usr/bin/fbxkb} <>
+            [exec] (Xvidtune) {xvidtune} <>
+         [end]
+      [end]
+      [submenu] (Shell) {}
+         [exec] (Bash) { x-terminal-emulator -T "Bash" -e /bin/bash --login} <>
+         [exec] (Dash) { x-terminal-emulator -T "Dash" -e /bin/dash -i} <>
+         [exec] (Sh) { x-terminal-emulator -T "Sh" -e /bin/sh --login} <>
+      [end]
+   [end]
+   [submenu] (游戏) {}
+      [submenu] (玩具类) {}
+         [exec] (Oclock) {oclock} <>
+         [exec] (Xclock (analog\)) {xclock -analog} <>
+         [exec] (Xclock (digital\)) {xclock -digital -update 1} <>
+         [exec] (Xeyes) {xeyes} <>
+         [exec] (Xlogo) {xlogo} <>
+      [end]
+   [end]
