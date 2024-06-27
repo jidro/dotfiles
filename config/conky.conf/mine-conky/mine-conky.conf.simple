@@ -1,0 +1,185 @@
+--[[
+
+#======================================================================================
+#-- CONKY
+#-- For commands in conky.config section:
+#-- http://conky.sourceforge.net/config_settings.html
+#--
+#-- For commands in conky.text section:
+#-- http://conky.sourceforge.net/variables.html
+#--
+#-- A PDF with all variables is provided
+#=====================================================================================
+#-- Conky, a system monitor https://github.com/brndnmtthws/conky
+#--
+#-- This configuration file is Lua code. You can write code in here, and it will
+#-- execute when Conky loads. You can use it to generate your own advanced
+#-- configurations.
+#--
+#-- Try this (remove the `--`):
+#--
+#--   print("Loading Conky config")
+#--
+#-- For more on Lua, see:
+#-- https://www.lua.org/pil/contents.html
+#=====================================================================================
+
+]]
+
+conky.config = {
+
+	--Various settings
+
+	background = true,						-- forked to background
+	cpu_avg_samples = 2,						-- The number of samples to average for CPU monitoring.
+	diskio_avg_samples = 10,					-- The number of samples to average for disk I/O monitoring.
+	double_buffer = true,						-- Use the Xdbe extension? (eliminates flicker)
+	if_up_strictness = 'address',					-- how strict if testing interface is up - up, link or address
+	net_avg_samples = 2,						-- The number of samples to average for net data
+	no_buffers = true,						-- Subtract (file system) buffers from used memory?
+	temperature_unit = 'celsius',					-- fahrenheit or celsius
+	update_interval = 1.0,						-- update interval
+	imlib_cache_size = 0,                       			-- disable image cache to get a new spotify cover per song
+
+	--Placement
+
+	alignment = 'top_right',					-- top_left,top_middle,top_right,bottom_left,bottom_middle,bottom_right,
+									-- middle_left,middle_middle,middle_right,none
+
+	--Arch Duoscreen
+
+	gap_x = 10,							-- pixels between right or left border
+	gap_y = 35,							-- pixels between bottom or left border
+	minimum_height = 5,						-- minimum height of window
+	minimum_width = 5,						-- minimum width of window
+	maximum_width = 400,						-- maximum width of window
+
+	--Graphical
+
+	border_width = 1, 						-- border width in pixels
+	border_inner_margin = 10, 					-- margin between border and text
+	border_outer_margin = 5, 					-- margin between border and edge of window
+	default_bar_width = 80,					    	-- default is 0 - full width
+	default_bar_height = 10,					-- default is 6
+	default_gauge_height = 25,					-- default is 25
+	default_gauge_width =40,					-- default is 40
+	default_graph_height = 40,					-- default is 25
+	default_graph_width = 0,					-- default is 0 - full width
+	default_outline_color = 'white',				-- default outline colour
+	default_shade_color = 'white',					-- default shading colour
+	draw_borders = false,						-- draw borders around text
+	draw_graph_borders = true,					-- draw borders around graphs
+	draw_outline = false,						-- draw outline
+	draw_shades = false,						-- draw shades
+	stippled_borders = 0,						-- dashing the border
+
+	--Textual
+
+	extra_newline = false,						-- extra newline at the end - for asesome's wiboxes
+	format_human_readable = true,					-- KiB, MiB rather then number of bytes
+	font = 'DejaVu Sans Mono:size=11',  				-- font for complete conky unless in code defined
+	max_text_width = 0,						-- 0 will make sure line does not get broken if width too smal
+	max_user_text = 16384,						-- max text in conky default 16384
+	override_utf8_locale = true,					-- force UTF8 requires xft
+	short_units = true,						-- shorten units from KiB to k
+	top_name_width = 21,						-- width for $top name value default 15
+	top_name_verbose = false,					-- If true, top name shows the full command line of  each  process - Default value is false.
+	uppercase = false,						-- uppercase or not
+	use_spacer = 'none',						-- adds spaces around certain objects to align - default none
+	use_xft = true,							-- xft font - anti-aliased font
+	xftfont = 'WenQuanYi Zen Hei:size=9',
+	xftalpha = 0.8,							-- alpha of the xft font - between 0-1
+
+	--Windows
+
+	own_window = true,						-- create your own window to draw
+	own_window_class = 'Conky',
+	own_window_type = 'override',					-- if own_window true options are: normal/override/dock/desktop/panel
+	own_window_transparent = true,					-- if own_window_argb_visual is true sets background opacity 0%
+	own_window_argb_visual =true,					-- use ARGB - composite manager required
+	own_window_argb_value = 100,			    		-- real transparency - composite manager required 0-255
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',  -- if own_window true - just hints - own_window_type sets it
+	own_window_colour = '#000000',					-- set colour if own_window_transparent no
+
+	--Print
+
+	out_to_console = false,						-- Print text to stdout.
+	out_to_ncurses = false,						-- Print text in the console, but use ncurses so that conky can print the text of a new update over the old text. (In the future this will provide more useful things).
+	out_to_stderr = false,						-- Print text to stderr.
+	out_to_x = true,						-- When set to no, there will be no output in X (useful when you also use things like out_to_console). If you set it to no, make sure that it's placed before all other X-related setting (take the first line of your configfile to be sure).
+
+	--Shows
+
+
+	show_graph_range = false,					-- Shows the time range covered by a graph.
+	show_graph_scale = false,					-- Shows the maximum value in scaled graphs.
+
+	--Colours
+
+	default_color = '#AD7FA8',  					-- default color and border color
+	color1 = '#FF0000',
+	color2 = '#3e5570',
+	color3 = '#cccccc',
+	color4 = '#D9BC83',
+	color5 = '#00BFFF',						-- teal
+	color6 = '#FFFFFF',						-- white
+
+	--Signal Colours
+	color7 = '#C0FF00',						-- green
+	color8 = '#FFA726',  						-- orange
+	color9 = '#F1544B',  						-- firebrick
+
+    --Lua
+
+}
+
+conky.text = [[
+${color #0277BD}SYSTEM ${hr 1}
+#Time:$alignr${time %Y.%m.%d}$alignc   ${time %H:%M:%S}$alignr   Week:${time %w}
+Hostname: $alignr$nodename
+Kernel: $alignr$kernel
+Machine:$alignr$machine
+Uptime: $alignr$uptime
+Temp: ${alignr}${acpitemp} °C
+Battery:$alignr${battery BAT0}
+#Battery:$alignr${battery_percent BAT0}%  
+###############
+${color #006064}NETWORK ${hr 1}
+IP:${addr wlp5s0}
+GateWay:$gw_ip
+Down ${downspeed wlp5s0} /s ${alignr}Up ${upspeed wlp5s0} /s
+#${downspeedgraph wlp5s0 25,107} ${alignr}${upspeedgraph wlp5s0 25,107}
+Total ${totaldown wlp5s0} ${alignr}Total ${totalup wlp5s0}
+#############
+${color #26C6DA}MEMORY ${hr 1}
+Ram ${alignr}$mem / $memmax ($memperc%)
+${membar 4}
+swap ${alignr}$swap / $swapmax ($swapperc%)
+${swapbar 4}
+Highest MEM $alignr MEM%
+${top_mem name 1}$alignr ${top_mem mem 1}
+${top_mem name 2}$alignr ${top_mem mem 2}
+${top_mem name 3}$alignr ${top_mem mem 3}
+##############
+${color #FF9800}CPU ${hr 1}
+Frequency: ${alignr}${freq dyn} MHz
+Processes: ${alignr}$processes ($running_processes running)
+Load: ${alignr}$loadavg
+CPU1 ${alignr}${cpu cpu1}%
+${cpubar 4 cpu1}
+CPU2 ${alignr}${cpu cpu2}%
+${cpubar 4 cpu2}
+Highest CPU $alignr CPU%
+${top name 1}$alignr${top cpu 1}
+${top name 2}$alignr${top cpu 2}
+${top name 3}$alignr${top cpu 3}
+##############
+${color #00BFA5}FILE SYSTEM ${hr 1}
+Disk I/O:$diskio
+Root: ${alignr}${fs_free /} / ${fs_size /}
+${fs_bar 4 /}
+Home: ${alignr}${fs_free /home} / ${fs_size /home}
+${fs_bar 4 /home}
+#############
+]]
+

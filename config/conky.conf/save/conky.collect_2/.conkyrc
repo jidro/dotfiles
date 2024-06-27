@@ -1,0 +1,111 @@
+alignment bottom_right
+background yes
+draw_borders no
+border_width 10
+
+cpu_avg_samples 2
+#default_color cornflowerblue
+default_shade_color black
+#default_outline_color red
+double_buffer yes
+draw_graph_borders no
+
+#draw_outline yes
+draw_shades yes
+
+gap_x 15
+gap_y 150
+maximum_width 330
+
+max_port_monitor_connections 64
+
+#max_specials 512
+max_user_text 16384
+minimum_size 330 10
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+own_window yes
+own_window_type override
+own_window_class Conky
+own_window_argb_visual true
+own_window_transparent true
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_transparent yes
+#own_window_argb_visual yes
+own_window_argb_value 150
+update_interval 1
+uppercase no
+
+use_spacer none
+
+use_xft yes
+xftalpha 0.8
+color0 green
+color1 white
+color2 yellow
+color3 blue
+color4 yellow
+
+#xftfont  Bitstream Vera Sans Mono:size=8
+xftfont OPPOSans-R:size=8
+
+TEXT
+${color #9999CC}$alignc${font DejaVu Sans:size=12}$nodename   $font
+${color}${alignc}Uptime: $uptime
+${time %Y.%m.%d}${alignc}${time %H:%M}${alignc}${alignr}Week:${time %w}${alignr}
+#${color #9999CC}${alignc}${time %b%d %p%l:%M}${alignc}
+#${color}$alignc${font Noto Sans CJK-Bold:size=10}${time %p %I:%M}   $font
+#${color}${alignc}${time %a %b %d}
+#${color}${alignc}${time %b %d}
+#${color}${alignc}${exec disp=${DISPLAY#:}; disp=${disp%.[0-9]}; cat $HOME/.desktop-session/desktop-code.$disp 2>/dev/null}
+###############
+${color3}SYSTEM ${hr 1}
+#Time:$alignr${time %Y.%m.%d}$alignc   ${time %H:%M}$alignr   Week:${time %w}
+Kernel: $alignr$kernel
+Machine:$alignr$machine
+Res:${alignr}${color3}${execi 60 xdpyinfo | sed -n -r "s/^\s*dimensions:.*\s([0-9]+x[0-9]+).*/\1/p"}
+Dpi:${alignr}${color3}${execi 60 sed -nr "s/^\s*Xft.dpi:\s*([0-9]+(x[0-9]+)?).*/\1/p" $HOME/.Xresources | grep "[0-9]" || echo 96}
+Automount: ${alignr}${color3}${execi 60 grep -q "^automount=TRUE" $HOME/.desktop-session/automount.conf 2>/dev/null && echo "enabled" || echo "disabled"}
+#Time£º${alignr}${time %p%l:%M}
+#Uptime: $alignr$uptime
+Temp: ${alignr}${acpitemp} Â°C
+#Battery:$alignr${battery BAT0}${battery_bar 8,100 BAT0}
+Battery:$alignr${battery_percent BAT0}%  ${battery_bar 8,100 BAT0}
+###############
+${color #CCCCFF}NETWORK ${hr 1}
+IP: ${alignr}${addr wls3}
+GateWay: ${alignr}$gw_ip
+Down ${downspeed wls3}/s ${alignr}Up ${upspeed wls3}/s
+#${downspeedgraph wlp5s0 25,107} ${alignr}${upspeedgraph wlp5s0 25,107}
+Total ${totaldown wls3} ${alignr}Total ${totalup wls3}
+#############
+${color #26C6DA}MEMORY ${hr 1}
+Ram ${alignr}$mem / $memmax ($memperc%)
+${membar 4}
+swap ${alignr}$swap / $swapmax ($swapperc%)
+${swapbar 4}
+Highest MEM $alignr MEM%
+${top_mem name 1}$alignr ${top_mem mem 1}
+${top_mem name 2}$alignr ${top_mem mem 2}
+${top_mem name 3}$alignr ${top_mem mem 3}
+##############
+${color #FF9800}CPU ${hr 1}
+Frequency: ${alignr}${freq dyn} MHz
+Load: ${alignr}$loadavg
+CPU1 ${alignc}${cpu cpu1}% ${alignr}${cpubar 4,95 cpu1}
+${cpugraph 00b070 5000a0 cpu1}
+CPU2 ${alignc}${cpu cpu2}% ${alignr}${cpubar 4,95 cpu2}
+${cpugraph ffffff 123456 cpu2}
+Highest CPU $alignr CPU%
+${top name 1}$alignr${top cpu 1}
+${top name 2}$alignr${top cpu 2}
+${top name 3}$alignr${top cpu 3}
+##############
+${color #00BFA5}FILE SYSTEM ${hr 1}
+Disk I/O:$diskio
+Root: ${alignr}${fs_free /} / ${fs_size /}
+${fs_bar 4 /}
+Home: ${alignr}${fs_free /home} / ${fs_size /home}
+${fs_bar 4 /home}
+#############

@@ -1,0 +1,197 @@
+# Conky sample configuration
+#
+# 天气预报网站：http://www.weather.com.cn/forecast/index.shtml  找你所在的城市，选好后点击查询，则导入你所在城市的天气信息的网页。看浏览器的地址栏，找到代码，然后替换本脚本第191行的代码就可以了。
+#即，原来是：${offset 200}${execi 600 curl -s --connect-timeout 30 "http://wap.weather.com.cn/data/sk/101280601.html" >/tmp/current }
+#其中“101280601”是深圳的城市码，如果换成“101010100”就是北京的城市码
+#北京的天气实况就是：${offset 200}${execi 600 curl -s --connect-timeout 30 "http://wap.weather.com.cn/data/sk/101010100.html" >/tmp/current }
+#
+# the list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+
+# set to yes if you want Conky to be forked in the background
+background yes
+
+# X font when Xft is disabled, you can pick one with program xfontsel
+#font 5×7
+#font 6×10
+#font 7×13
+#font 8×13
+#font 9×15
+#font *mintsmild.se*
+#font -*-*-*-*-*-*-34-*-*-*-*-*-*-*
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+xftfont Wenquanyi ZenHei:size=10
+
+# Text alpha when using Xft
+xftalpha 1.0
+
+# Print everything to stdout?
+# out_to_console no
+
+# MPD host/port
+# mpd_port 6600
+# mpd_password tinker_bell
+
+# Print everything to console?
+# out_to_console no
+
+# mail spool
+#mail_spool $MAIL
+
+# Update interval in seconds
+update_interval 2.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window no
+
+# If own_window is yes, you may use type normal, desktop or override
+own_window_type override
+
+# Use pseudo transparency with own_window?
+own_window_transparent yes
+
+# If own_window_transparent is set to no, you can set the background colour here
+# own_window_colour hotpink
+
+# If own_window is yes, these window manager hints may be used
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+#minimum_size 400 5
+maximum_width 308
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Draw borders around graphs
+draw_graph_borders yes
+
+# Stippled borders?
+stippled_borders 8
+
+# border margins
+border_margin 4
+
+# border width
+border_width 1
+
+# Default colors and also border colors
+default_color white
+default_shade_color black
+default_outline_color black
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+#alignment none
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 10
+gap_y 40
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about? This only affects certain objects.
+use_spacer no
+
+# Allow each port monitor to track at most this many connections (if 0 or not set, default is 256)
+#max_port_monitor_connections 256
+
+# Maximum number of special things, e.g. fonts, offsets, aligns, etc.
+#max_specials 512
+
+# Maximum size of buffer for user text, i.e. below TEXT line.
+#max_user_text 16384
+
+# Timing interval for music player thread, e.g. mpd, audacious
+#music_player_interval (update_interval is default)
+
+# variable is given either in format $variable or in ${variable}. Latter
+# allows characters right after the variable and must be used in network
+# stuff because of an argument
+
+# stuff after ‘TEXT’ will be formatted on screen
+
+#${color #88aadd}MPD: ${alignc}$mpd_artist - $mpd_title
+#${color #88aadd}$mpd_bar
+#${color #88aadd}${alignc}$mpd_status
+#${color red}${cpugraph 0000ff 00ff00}
+#${color #0000ff}${downspeedgraph eth1 32,150 ff0000 0000ff} ${color #22ccff}${upspeedgraph eth1 32,150 0000ff ff0000}
+
+TEXT
+${color lightgrey}${font sans-serif:style=Bold:size=11}${time %b%d日 星期%a}${alignr}${time %p%l:%M:%S}
+${color #ddaa00}操作系统:$alignr${color #88aadd} ${execi 3600 uname -o} ${execi 3600 veketname | grep -e "系统：" | awk -F： '{print $2}'}
+${color #ddaa00}系统版本：$alignr${color #88aadd}${execi 3600 veketname | grep -e 系统版本 | awk -F： '{print $2}'}
+${color #ddaa00}内核:$alignr${color #88aadd}$kernel $machine ${color #88aadd}${execi 3600 uname -v | cut -c -15}
+${color #ddaa00}veket 用户: ${alignr}${color #88aadd}${execi 3600 whoami} ${color #88aadd}on  veket ${color #88aadd}
+${color #88aadd}$stippled_hr
+${color lightgrey}本机已运行:$color $uptime ${color lightgrey}- Load:$color $loadavg
+${color lightgrey}CPU 使用率:${offset 50}${color}${acpitemp}°C ${color lightgrey}硬盘读写:${color}${alignr}${diskio}/s
+${color #5000a0} ${cpu}% ${cpubar}
+${color 9fbbb2}${cpugraph 25,150 000000 5000a0}${alignr}${color 9fbbb2}${diskiograph 25,150 5000a0 000000}
+${color lightgrey}内存 使用率:$color $mem/$memmax - $memperc% ${color #88aadd}$membar
+${color lightgrey}交换空间使用率:$color $swap/$swapmax - $swapperc% ${color #88aadd}${swapbar}
+${color #88aadd}$stippled_hr
+${color lightgrey}网络:$alignr${color snow}${addr ppp0}
+${color lightgrey}下载:${color #8844ee} ${downspeed eth0} k/s${color lightgrey} ${offset 70}上传:${color #22ccff} ${upspeed eth0} k/s
+${color 9fbbb2}${downspeedgraph eth0 25,150 ff0000 0000ff} $alignr${color 9fbbb2}${upspeedgraph eth0 25,150 0000ff ff0000}
+${color lightgrey}文件系统:
+2fs/3fs文件 $color${fs_used /}/${fs_size /} ${color #9fbbb2}${fs_bar /}
+${color lightgrey}home分区 $color${fs_used /mnt/home}/${fs_size /mnt/home} ${color #9fbbb2}${fs_bar /mnt/home}
+${color #88aadd}$stippled_hr
+${color lightgrey}进程:$color $processes ${color grey}当前活动:$color $running_processes
+${color}CPU使用率
+${color}进程                            PID       CPU%      MEM%
+${font monofonto:size=16}${color #ddaa00} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}$font
+${color}内存使用率
+${font monofonto:size=16}${color #ddaa00} ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+${color lightgrey} ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+${color lightgrey} ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}$font
+${color #88aadd}$stippled_hr
+${color}音乐(Audacious)
+${color #ddaa00} ${exec audtool current-song current-song-info}
+${color #88aadd}$stippled_hr
+${color lightgrey}天气实况：
+${execi 600 curl -s --connect-timeout 30 "http://wap.weather.com.cn/data/sk/101280601.html" >/tmp/current }
+${voffset -10}${font 文泉驿等宽正黑:size=12}${color1}${execi 600 sed  's/^.*"city":"//' /tmp/current | sed 's/",".*$//' }: ${execi 600 sed  's/^.*"img_title_single":"//' /tmp/forcast | sed 's/",".*$//' } ${execi 600 sed  's/^.*"temp":"//' /tmp/current | sed 's/",".*$//' }°C 
+风向：${execi 600 /tmp/current |sed 's/^.*"WD":"//' /tmp/current | sed 's/",".*$//'} 风力：${execi 600 /tmp/current |sed 's/^.*"WS":"//' /tmp/current | sed 's/",".*$//'}
+湿度：${execi 600 /tmp/current |sed 's/^.*"SD":"//' /tmp/current | sed 's/",".*$//'}$color
+更新时间：${execi 600 /tmp/current |sed 's/^.*"time":"//' /tmp/current | sed 's/",".*$//'}$color

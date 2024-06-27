@@ -1,0 +1,191 @@
+# 使用Xft字体?
+background yes
+use_xft yes
+xftfont cure:size=6
+
+# 刷新时间（秒）
+update_interval 2
+
+# 刷新次数，0为永远。
+total_run_times 0
+
+# 自定义conky窗体。
+own_window_class Conky
+own_window yes
+own_window_transparent yes
+own_window_type override
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+
+# 双缓冲，与conky闪烁有关，但不一定有效。
+double_buffer yes
+
+# 显示区的最小尺寸
+minimum_size 165 5
+
+maximum_width 180
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_margin 40
+
+# border width
+border_width 0
+
+# Default colors and also border colors
+#default_color 4d4d4d
+#default_shade_color white
+#default_outline_color black
+#own_window_colour 
+
+# 文本显示位置
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# 文本显示位置微调。
+gap_x 5
+gap_y 30
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer none
+
+# Lua Load  #
+#lua_load ~/.lua/scripts/clock_rings.lua
+#lua_draw_hook_pre clock_rings
+
+#正文开始
+TEXT
+#${voffset 8}${color 3399FF}${font caviar dreams:size=16}${time %A}${font}
+#${voffset -8}${alignr 50}${color FFFFFF}${font caviar dreams:size=32}${time %e}${font}
+#
+#
+# |--数字时间，及日期。
+${color 8F8F8F}${alignc 55}${font Beech:size=36}${time %k %M}
+${font WenQuanYi Micro Hei}${color EE6363}${alignc}${voffset -10}${time %B 星期%a} ${time %Y}
+#
+#
+# |--分割线
+${color 8F8F8F}${voffset -4}${stippled_hr}
+#
+#
+# |--日历。
+${color 7C96B0}${font DejaVu Sans Mono:size=10}${execpi 300 DJS=`date +%_d`; cal | sed '1d' | sed '/./!d' | sed 's/$/                     /' | fold -w 21 | sed -n '/^.\{21\}/p' | sed 's/^/${alignc} /' | sed /" $DJS "/s/" $DJS "/" "'${color 98AE68}'"$DJS"'${color 8F8F8F}'" "/}${font}
+#
+#
+# |--分割线
+${voffset -4}${stippled_hr}
+#
+#
+# |--显示新更新包个数。
+#${voffset -15}${alignc -1}Update: ${color 8F8F8F}(${execi 300 perl ~/scripts/conky-updates.pl})
+#
+#
+# |--系统当前用户、内核版本及开机时间及。
+${color DAB152}${font OpenLogos:size=16}B${color CC0066}${font Comic Sans MS:style=Bold:size=12}$nodename
+${color 00CCCC}${font WenQuanYi Micro Hei:size=9}内核版本:${color 8F8F8F}${font Comic Sans MS:size=9}${alignr}$kernel
+${color 00CCCC}${font WenQuanYi Micro Hei:size=9}开机时间:${color 8F8F8F}${font Comic Sans MS:size=9}${alignr}$uptime
+#
+#
+# |--分割线
+${voffset -4}${stippled_hr}
+#
+#
+# |--CPU占用百分比及图形化显示。
+${offset 1}${color CCFF99}${font Poky:size=16}P${color CC0066}${font Comic Sans MS:style=Bold:size=12}CPU:${color CC0066}${font Comic Sans MS:style=Bold:size=12}${color1}${cpu cpu}%${color 262626}${cpugraph cpu1 20,85 262626 1E1E1E} 
+#
+#
+# |--总进程数和活跃进程数。
+${color CCFF99}${font Poky:size=16}a${font WenQuanYi Micro Hei:size=9} 进程:$alignr$processes个 ($running_processes个活跃进程)
+#
+#
+# |--cpu占用量排行。
+最高CPU占用:$alignr -PID-    CPU%  
+${color 9900CC}${top name 1}$alignr${top pid 1}   ${top cpu 1}  
+${color 003333}${top name 2}$alignr${top pid 2}   ${top cpu 2} 
+#${color 003333}${top name 3}$alignr${top pid 3}   ${top cpu 3} 
+#
+#
+# |--分割线
+${voffset -4}${stippled_hr}
+#
+#
+# |--内存使用状况。
+${color CCFF99}${font Poky:size=16}s${font WenQuanYi Micro Hei:size=10}内存使用:${color 003333}${alignr}$mem/$memmax
+${color 1A1A1A}${membar 3,85}
+#
+#
+# |--内存使用量排行。
+#Highest MEM:$alignr -PID-    MEM%  
+#${color #ddaa00}${top_mem name 1}$alignr${top_mem pid 1}   ${top_mem mem 1}  
+#${color lightgrey}${top_mem name 2}$alignr${top_mem pid 2}   ${top_mem mem 2}  
+#${color lightgrey}${top_mem name 3}$alignr${top_mem pid 3}   ${top_mem mem 3}  
+#
+#
+# |--硬盘读写状况。
+#${color CCFF99}${font Poky:size=16}y${color 003333}${font WenQuanYi Micro Hei:size=9} 硬盘操作:${color 003333} ${alignr 4}$diskio
+#${color 262626}${diskiograph 20,85 1E1E1E 1A1A1A}
+#
+#
+# |--根目录状况。
+${color CCCC66}${font WenQuanYi Micro Hei:size=10}根目录剩余空间:${color 003333}${alignr}${fs_free /}
+${color 1A1A1A}${fs_bar 3,85 /}
+#
+#
+# |--分割线
+#${voffset -4}${stippled_hr}
+#
+#
+# |--显卡参数显示。
+#${color 7C96B0}Gpu:${color 8F8F8F}${alignr}${execi 20 nvidia-settings -q GPUCurrentClockFreqs -t} ${color EE6363}${execi 20 nvidia-settings -q GPUCoreTemp -t}°C
+#
+#
+# |--分割线
+${voffset -4}${stippled_hr}
+#
+#
+# |--上传速度，及上传总量统计。
+${color CCFF99}${font PizzaDude Bullets:size=16}N${font}${color CCCC66}${font WenQuanYi Micro Hei:size=10}上传速度:${color 003333}${alignr}${upspeed eth0}/s
+${color 262626}${upspeedgraph eth0 20,85 1E1E1E 1A1A1A}${color 003333}${font WenQuanYi Micro Hei:size=9} 上传总量: ${color 003333}${totalup eth0}
+#
+#
+# |--下载速度，及下载总量统计。
+${color CCFF99}${font PizzaDude Bullets:size=16}T${font}${color CCCC66}${font WenQuanYi Micro Hei:size=10}下载速度:${color 003333}${alignr}${downspeed eth0}/s
+${color 262626}${downspeedgraph eth0 20,85 1E1E1E 1A1A1A}${color 003333}${font WenQuanYi Micro Hei:size=9} 下载总量: ${color 003333}${totaldown eth0}
+#
+#
+# |--挂载分区状况。
+#${color FFFFFF}xxxxx:${color FFFFFF}${alignr}${fs_free /mnt/xxxx}
+#${color FFFFFF}${fs_bar 3,85 /media/xxxx}
+#${color FFFFFF}xxxxx:${color FFFFFF}${alignr}${fs_free /mnt/xxxx}
+#${color FFFFFF}${fs_bar 3,85 /media/xxxx}
+#${color FFFFFF}xxxxx:${color FFFFFF}${alignr}${fs_free /mnt/xxxx}
+#${color FFFFFF}${fs_bar 3,85 /media/xxxx}
+#
+#
+#end
