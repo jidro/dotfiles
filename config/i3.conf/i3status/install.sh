@@ -7,8 +7,8 @@
 mkdir -pv $HOME/.config/i3status/
 cp -rfpv $HOME/.config/i3status/config $HOME/.config/i3status/config.bak
 rm -rfv $HOME/.config/i3status/config
-cp -rfpv i3status/* $HOME/.config/i3status
-mv -v ~/.config/i3status/i3status.conf $HOME/.config/i3status/config
+cp -rfpv i3status/config $HOME/.config/i3status/
+#mv -v ~/.config/i3status/i3status.conf $HOME/.config/i3status/config
 
 # Secondly, if the configuration file for i3status is not in the $HOME/.config/i3status folder, 
 # it may be in the $HOME folder, and it is a hidden file with the approximate name .i3status.conf. 
