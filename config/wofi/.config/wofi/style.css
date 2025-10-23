@@ -1,0 +1,122 @@
+* {
+//font-family: DejaVu Sans Mono; 
+//font-size: 20px;
+border: none;
+}
+
+/* Global window. */
+window {
+margin: 0px;
+border: 1px solid #bd93f9;
+background-color: #282a36;
+}
+
+/* Search box. */
+#input {
+margin: 5px;
+border: none;
+border-radius: 10px;
+color: #f8f8f2;
+background-color: #44475a;
+font-size: 15px;
+font-weight: normal;
+}
+
+/* The color of the search box icon. */
+#input image {
+    border: none;
+    color: #6B8390;
+}
+
+/* Special effects when focusing on the search box. */
+#input:focus {
+box-shadow: 
+/* Outer layer: purple-gray technological halo. */
+rgba(139, 69, 19, 0.5) 0 0 15px 3px,
+/* Mid-level: Purple-gray dynamic diffusion. */
+rgba(102, 51, 153, 0.6) 0 4px 12px -2px,
+/* Inner layer: deep gray with embedded shadows. */
+rgba(40, 40, 40, 0.15) 0 1px 0 inset
+}
+
+/* List. */
+#inner-box {
+margin: 5px;
+border: none;
+background-color: #3D3D4A;
+}
+
+/* Background. */
+#outer-box {
+margin: 5px;
+border: none;
+background-color: #2C2C3D;
+}
+
+/* List border. */
+#scroll {
+margin: 0px;
+border: none;
+background-color: #3A3A4B;
+}
+
+/* Fonts in the list. */
+#text {
+margin: 5px;
+border: none;
+color: #E6E6E6;
+//background-color: #3D3D4A;
+} 
+
+/* Set the font for the selected item. */
+#text:selected {
+margin: 5px;
+color: #F9F9F9;
+//font-size: 15px;
+font-weight: bold;
+border: none;
+//background-color: #5A5A6A;
+}
+/* Font of the selected item. */
+//#entry:selected #text {
+//font-weight: bold;
+//}
+
+/* Icon. */
+#entry image {
+padding-right: 3px;
+//border: 2px solid cyan;
+background-color: transparent;
+}
+
+/* Alternate background colors for list items. */
+#entry:nth-child(even) {
+background-color: #3A3A4B;
+transition: background-color;
+}
+
+/* Sub-items of the entry. */
+#entry.activatable {
+margin: 2px;
+border-radius: 9px;
+border: 1px solid #3D3D4A;
+background-color: #2C2C3D;
+}
+
+/* Subproject font settings. */
+#entry.activatable #text {
+color: #282a36;
+}
+
+/* The arrow expansion symbol for the subproject. */
+#entry > * {
+color: #f8f8f2;
+}
+
+/* The selected item in the list. */
+#entry:selected {
+margin: 0px;
+border-radius: 9px;
+border: 1px solid #5A5A6A;
+background-color: #44475A;
+}

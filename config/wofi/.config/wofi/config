@@ -1,0 +1,81 @@
+# Specifies the location. The default is center.
+location=center
+# Specifies the menu width in pixels or percent of screen size.
+# The default is 50%.
+# Pixels are used unless the number ends with a %.
+#width=750
+width=600
+# Specifies the menu height in pixels or percent of screen size.
+# The default is 40%.
+# Pixels are used unless the number ends with a %.
+height=400
+# Sets the prompt to be display in the search box.
+# The default is the name of the mode.
+#prompt= 👍启动快，快启动！就怕你不会用！🤔
+prompt="🔍 搜索应用..."
+# Specifies the rate at which search results are updated in milliseconds.
+# The default is 100.
+filter_rate=100
+# If true allows pango markup to be processed and rendered.
+# The default is false.
+allow_markup=true
+# If true disables multiple actions for modes that support it.
+# The default is false.
+no_actions=true
+# If true enables case insensitive search.
+# The default is false.
+insensitive=true
+# Specifies the term to use when running a program in a terminal.
+# This overrides the default terminal run order
+# which is kitty, alacritty, wezterm, foot, termite,
+# gnome-terminal, weston-terminal in that order.
+term=kitty
+# Specifies the mode to run in.
+#show=drun
+show=all
+# If true parses out image escapes and pango preventing them
+# from being used for searching.
+# The default is false.
+parse_search=true
+# Specifies the height in number of lines instead of pixels.
+lines=10
+# Specifies the orientation,
+# it can be either horizontal or vertical.
+# The default is vertical.
+orientation=vertical
+# If true allows image escape sequences to be processed and rendered.
+# The default is false.
+allow_images=true
+# Specifies the size of images in pixels when images are enabled.
+# The default is 32.
+image_size=24
+# Specifies whether wofi should be dynamically shrunk to fit the number
+# of visible lines or if it should always stay the same size.
+# Default is false.
+#dynamic_lines=true
+dynamic_lines=false
+# Specifies the key to use in order to expand/contract multi-action entires.
+# There is no default.
+key_expand=Tab
+# If true runs wofi in a normal window instead of using wlr-layer-shell.
+# The default is false.
+#normal_window=true
+# If true spaces will not be treated as part of the executable name
+# but rather as an argument separator equivalent to holding control
+# while pressing enter.
+# The default is false.
+#always_parse_args=true
+# If true shows all the entries in path,
+# this will show entries that have the same executable name,
+# for example /bin/bash and /usr/bin/bash will be shown separately as
+# bash instead of having one bash entry for the first one encountered.
+# The default is true.
+#show_all=false
+# The following is the configuration given by Baidu AI.
+# I reserved it first,
+# but I don't know what it is used for.
+# I went to the General Commands Manual of Wofi
+# and didn't find these configurations.
+cycle=true
+hide_scrollbar=true
+content_horizontal=fill
