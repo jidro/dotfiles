@@ -1,0 +1,6 @@
+set $term foot
+set $browser chromium --enable-features=UseOzonePlatform --ozone-platform=wayland
+set $filemanager pcmanfm
+set $editor mousepad
+set $launcher nwg-drawer
+set $exit $launcher
