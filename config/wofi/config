@@ -4,7 +4,7 @@ location=center
 # The default is 50%.
 # Pixels are used unless the number ends with a %.
 #width=750
-width=600
+width=700
 # Specifies the menu height in pixels or percent of screen size.
 # The default is 40%.
 # Pixels are used unless the number ends with a %.
@@ -38,7 +38,7 @@ show=all
 # The default is false.
 parse_search=true
 # Specifies the height in number of lines instead of pixels.
-lines=10
+lines=12
 # Specifies the orientation,
 # it can be either horizontal or vertical.
 # The default is vertical.

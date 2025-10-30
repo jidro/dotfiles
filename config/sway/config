@@ -22,7 +22,7 @@ set $term sakura
 #set $term alacritty
 # Your preferred application launcher
 #set $menu wmenu-run
-set $menu "wofi --line 12 --width 700 --height 400 --show drun"
+set $menu "wofi --show drun"
 
 ### Output configuration
 #
@@ -347,7 +347,7 @@ bindsym $mod+r mode "resize"
 #		background	#454352
 #		separator	#4B5262
 
-		# Use RGBA colors. 	# <Boundaries> 	<Background> 	<Text>
+		# Use RGBA colors. 	<Boundaries> 	<Background> 	<Text>
 #		focused_workspace	#4D5B55		#637F8D		#FFFFFF
 #		active_workspace	#484E57		#776F82		#FAFBFF
 #		inactive_workspace	#4D6873		#475B67		#B6C4CC
